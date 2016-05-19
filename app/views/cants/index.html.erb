@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Prov</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cants.each do |cant| %>
+      <tr>
+        <td><%= cant.name %></td>
+        <td><%= cant.prov %></td>
+        <td><%= link_to 'Show', cant %></td>
+        <td><%= link_to 'Edit', edit_cant_path(cant) %></td>
+        <td><%= link_to 'Destroy', cant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cant', new_cant_path %>

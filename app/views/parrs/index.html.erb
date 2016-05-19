@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Parrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parrs.each do |parr| %>
+      <tr>
+        <td><%= parr.name %></td>
+        <td><%= parr.cant %></td>
+        <td><%= link_to 'Show', parr %></td>
+        <td><%= link_to 'Edit', edit_parr_path(parr) %></td>
+        <td><%= link_to 'Destroy', parr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parr', new_parr_path %>
