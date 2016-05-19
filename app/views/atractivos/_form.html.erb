@@ -1,0 +1,49 @@
+<%= form_for(@atractivo) do |f| %>
+  <% if @atractivo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@atractivo.errors.count, "error") %> prohibited this atractivo from being saved:</h2>
+
+      <ul>
+      <% @atractivo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :parr_id %><br>
+    <%= f.number_field :parr_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cant_id %><br>
+    <%= f.number_field :cant_id %>
+  </div>
+  <div class="field">
+    <%= f.label :prov_id %><br>
+    <%= f.number_field :prov_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subtipo_id %><br>
+    <%= f.number_field :subtipo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_id %><br>
+    <%= f.number_field :tipo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :categ_id %><br>
+    <%= f.number_field :categ_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @atractivo.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @atractivo.description %>
+</p>
+
+<p>
+  <strong>Parr:</strong>
+  <%= @atractivo.parr_id %>
+</p>
+
+<p>
+  <strong>Cant:</strong>
+  <%= @atractivo.cant_id %>
+</p>
+
+<p>
+  <strong>Prov:</strong>
+  <%= @atractivo.prov_id %>
+</p>
+
+<p>
+  <strong>Subtipo:</strong>
+  <%= @atractivo.subtipo_id %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @atractivo.tipo_id %>
+</p>
+
+<p>
+  <strong>Categ:</strong>
+  <%= @atractivo.categ_id %>
+</p>
+
+<%= link_to 'Edit', edit_atractivo_path(@atractivo) %> |
+<%= link_to 'Back', atractivos_path %>

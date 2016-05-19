@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Atractivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Parr</th>
+      <th>Cant</th>
+      <th>Prov</th>
+      <th>Subtipo</th>
+      <th>Tipo</th>
+      <th>Categ</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atractivos.each do |atractivo| %>
+      <tr>
+        <td><%= atractivo.name %></td>
+        <td><%= atractivo.description %></td>
+        <td><%= atractivo.parr_id %></td>
+        <td><%= atractivo.cant_id %></td>
+        <td><%= atractivo.prov_id %></td>
+        <td><%= atractivo.subtipo_id %></td>
+        <td><%= atractivo.tipo_id %></td>
+        <td><%= atractivo.categ_id %></td>
+        <td><%= link_to 'Show', atractivo %></td>
+        <td><%= link_to 'Edit', edit_atractivo_path(atractivo) %></td>
+        <td><%= link_to 'Destroy', atractivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atractivo', new_atractivo_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :atractivos
   resources :subtipos
   resources :tipos
   resources :categs

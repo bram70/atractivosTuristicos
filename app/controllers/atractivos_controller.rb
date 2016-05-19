@@ -1,0 +1,74 @@
+class AtractivosController < ApplicationController
+  before_action :set_atractivo, only: [:show, :edit, :update, :destroy]
+
+  # GET /atractivos
+  # GET /atractivos.json
+  def index
+    @atractivos = Atractivo.all
+  end
+
+  # GET /atractivos/1
+  # GET /atractivos/1.json
+  def show
+  end
+
+  # GET /atractivos/new
+  def new
+    @atractivo = Atractivo.new
+  end
+
+  # GET /atractivos/1/edit
+  def edit
+  end
+
+  # POST /atractivos
+  # POST /atractivos.json
+  def create
+    @atractivo = Atractivo.new(atractivo_params)
+
+    respond_to do |format|
+      if @atractivo.save
+        format.html { redirect_to @atractivo, notice: 'Atractivo was successfully created.' }
+        format.json { render :show, status: :created, location: @atractivo }
+      else
+        format.html { render :new }
+        format.json { render json: @atractivo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /atractivos/1
+  # PATCH/PUT /atractivos/1.json
+  def update
+    respond_to do |format|
+      if @atractivo.update(atractivo_params)
+        format.html { redirect_to @atractivo, notice: 'Atractivo was successfully updated.' }
+        format.json { render :show, status: :ok, location: @atractivo }
+      else
+        format.html { render :edit }
+        format.json { render json: @atractivo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /atractivos/1
+  # DELETE /atractivos/1.json
+  def destroy
+    @atractivo.destroy
+    respond_to do |format|
+      format.html { redirect_to atractivos_url, notice: 'Atractivo was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_atractivo
+      @atractivo = Atractivo.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def atractivo_params
+      params.require(:atractivo).permit(:name, :description, :parr_id, :cant_id, :prov_id, :subtipo_id, :tipo_id, :categ_id)
+    end
+end
