@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519183418) do
+ActiveRecord::Schema.define(version: 20160519190524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20160519183418) do
   end
 
   add_index "cants", ["prov_id"], name: "index_cants_on_prov_id", using: :btree
+
+  create_table "categs", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "parrs", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +46,26 @@ ActiveRecord::Schema.define(version: 20160519183418) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "subtipos", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "tipo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subtipos", ["tipo_id"], name: "index_subtipos_on_tipo_id", using: :btree
+
+  create_table "tipos", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "categ_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tipos", ["categ_id"], name: "index_tipos_on_categ_id", using: :btree
+
   add_foreign_key "cants", "provs"
   add_foreign_key "parrs", "cants"
+  add_foreign_key "subtipos", "tipos"
+  add_foreign_key "tipos", "categs"
 end

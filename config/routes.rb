@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :subtipos
+  resources :tipos
+  resources :categs
   resources :parrs
   resources :cants
   resources :provs

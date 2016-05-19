@@ -1,0 +1,2 @@
+module SubtiposHelper
+end
