@@ -51,6 +51,35 @@
       [subtipo.name.titleize, subtipo.id] }, 0), {}, { id: 'subtipos_select'} %>
   </div>
   <br>
+  <div class="field">
+    <%= f.label :calle_principal, "Calle Principal" %>
+    <%= f.text_field :calle_principal %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_direccion, "Numero" %>
+    <%= f.text_field :numero_direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :transversal_direccion, "transversal" %>
+    <%= f.text_field :transversal_direccion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :barrio_direccion, "Barrio, Sector o Comuna" %>
+    <%= f.text_field :barrio_direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :sitio_cercano, "Barrio, Sector o Comuna" %>
+    <%= f.text_field :sitio_cercano %>
+  </div>
+  <div class="field">
+    <%= f.label :latitud %>
+    <%= f.text_field :latitud %>
+  </div>
+  <div class="field">
+    <%= f.label :longitud %>
+    <%= f.text_field :longitud %>
+  </div>
   <div class="actions">
     <%= f.submit "Crear Atractivo" %>
   </div>

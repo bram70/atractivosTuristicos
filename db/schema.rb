@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519204918) do
+ActiveRecord::Schema.define(version: 20160524192053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,19 @@ ActiveRecord::Schema.define(version: 20160519204918) do
     t.integer  "subtipo_id"
     t.integer  "tipo_id"
     t.integer  "categ_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "calle_principal"
+    t.string   "numero_direccion"
+    t.string   "transversal_direccion"
+    t.string   "barrio_direccion"
+    t.string   "sitio_cercano"
+    t.decimal  "latitud",               precision: 10, scale: 6
+    t.decimal  "longitud",              precision: 10, scale: 6
+    t.string   "altura"
+    t.text     "clima"
+    t.string   "temperatura"
+    t.string   "precipitacion"
   end
 
   create_table "cants", force: :cascade do |t|
