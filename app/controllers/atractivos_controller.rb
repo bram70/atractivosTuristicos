@@ -15,10 +15,19 @@ class AtractivosController < ApplicationController
   # GET /atractivos/new
   def new
     @atractivo = Atractivo.new
+    @provs = Prov.all
+    @cants = Cant.where("prov_id = ?", Prov.first.id)
+    @parrs = Parr.where("cant_id = ?", Cant.first.id)
+
+    @categs = Categ.all
+    @tipos = Tipo.where("categ_id = ?", Categ.first.id)
+    @subtipos = Subtipo.where("tipo_id = ?", Tipo.first.id)
   end
 
   # GET /atractivos/1/edit
   def edit
+    @atractivo = Atractivo.find(params[:id])
+    @provs = Prov.all
   end
 
   # POST /atractivos
@@ -31,6 +40,7 @@ class AtractivosController < ApplicationController
         format.html { redirect_to @atractivo, notice: 'Atractivo was successfully created.' }
         format.json { render :show, status: :created, location: @atractivo }
       else
+        @provs = Prov.all
         format.html { render :new }
         format.json { render json: @atractivo.errors, status: :unprocessable_entity }
       end
@@ -58,6 +68,34 @@ class AtractivosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to atractivos_url, notice: 'Atractivo was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def add_cantones
+    @cants = Cant.where("prov_id = ?", params[:prov_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def add_parroquias
+    @parrs = Parr.where("cant_id = ?", params[:cant_id])
+    respond_to do |format|
+      format.js
+    end
+  end 
+
+  def add_tipos
+    @tipos = Tipo.where("categ_id = ?", params[:categ_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def add_subtipos
+    @subtipos = Subtipo.where("tipo_id = ?", params[:tipo_id])
+    respond_to do |format|
+      format.js
     end
   end
 

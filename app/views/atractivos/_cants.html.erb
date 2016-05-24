@@ -1,0 +1,6 @@
+<%= label_tag :cant %>
+<% unless @cants.blank? %>
+  <%= collection_select(:atractivo, :cant_id, @cants, :id, :name, :prompt => true )%>
+<% else %>
+  <%= select_tag "cant_id","cant_id", :prompt => "-- Select a city --" %>
+<% end %>

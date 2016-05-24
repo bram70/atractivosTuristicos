@@ -12,38 +12,46 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Nombre" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :description, "Descripcion" %><br>
+    <%= f.text_area :description %>
+  </div>
+    <div class="field">
+    <%= f.label :prov_id, "Provincia:" %>
+    <%= f.select :prov_id, options_for_select(@provs.collect { |prov|
+      [prov.name.titleize, prov.id] }, 1), {}, { id: 'provs_select'} %>
   </div>
   <div class="field">
-    <%= f.label :parr_id %><br>
-    <%= f.number_field :parr_id %>
+    <%= f.label :cant_id, "Canton:" %>
+    <%= f.select :cant_id, options_for_select(@cants.collect { |cant|
+      [cant.name.titleize, cant.id] }, 0), {}, { id: 'cants_select'} %>
   </div>
   <div class="field">
-    <%= f.label :cant_id %><br>
-    <%= f.number_field :cant_id %>
+    <%= f.label :parr_id, "Parroquia:" %>
+    <%= f.select :parr_id, options_for_select(@parrs.collect { |parr|
+      [parr.name.titleize, parr.id] }, 0), {}, { id: 'parrs_select'} %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :categ_id, "Categoria" %>
+    <%= f.select :categ_id, options_for_select(@categs.collect { |categ|
+      [categ.name.titleize, categ.id] }, 1), {}, { id: 'categs_select'} %>
   </div>
   <div class="field">
-    <%= f.label :prov_id %><br>
-    <%= f.number_field :prov_id %>
+    <%= f.label :tipo_id, "Tipo" %>
+    <%= f.select :tipo_id, options_for_select(@tipos.collect { |tipo|
+      [tipo.name.titleize, tipo.id] }, 0), {}, { id: 'tipos_select'} %>
   </div>
   <div class="field">
-    <%= f.label :subtipo_id %><br>
-    <%= f.number_field :subtipo_id %>
+    <%= f.label :subtipo_id, "Subtipo" %>
+    <%= f.select :subtipo_id, options_for_select(@subtipos.collect { |subtipo|
+      [subtipo.name.titleize, subtipo.id] }, 0), {}, { id: 'subtipos_select'} %>
   </div>
-  <div class="field">
-    <%= f.label :tipo_id %><br>
-    <%= f.number_field :tipo_id %>
-  </div>
-  <div class="field">
-    <%= f.label :categ_id %><br>
-    <%= f.number_field :categ_id %>
-  </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear Atractivo" %>
   </div>
 <% end %>

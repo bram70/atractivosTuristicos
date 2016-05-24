@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  resources :atractivos
   resources :subtipos
   resources :tipos
   resources :categs
   resources :parrs
   resources :cants
   resources :provs
+  resources :atractivos do
+    collection do
+      get 'add_cantones', to: 'atractivos#add_cantones'
+      get 'add_parroquias', to: 'atractivos#add_parroquias'
+      get 'add_tipos', to: 'atractivos#add_tipos'
+      get 'add_subtipos', to: 'atractivos#add_subtipos'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
