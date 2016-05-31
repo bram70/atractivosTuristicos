@@ -43,6 +43,7 @@ class AtractivosController < ApplicationController
 
     respond_to do |format|
       if @atractivo.save
+
         format.html { redirect_to @atractivo, notice: 'Atractivo was successfully created.' }
         format.json { render :show, status: :created, location: @atractivo }
       else
@@ -109,10 +110,17 @@ class AtractivosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_atractivo
       @atractivo = Atractivo.find(params[:id])
+      @provs = Prov.find(@atractivo.prov)
+      @cants = Cant.where("prov_id = ?", @atractivo.cant)
+      @parrs = Parr.where("cant_id = ?", @atractivo.parr)
+
+      @categs = Categ.find(@atractivo.categ)
+      @tipos = Tipo.find(@atractivo.tipo)
+      @subtipos = Subtipo.where("tipo_id = ?", @atractivo.subtipo)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atractivo_params
-      params.require(:atractivo).permit(:name, :description, :parr_id, :cant_id, :prov_id, :subtipo_id, :tipo_id, :categ_id)
+      params.require(:atractivo).permit(:name, :description, :parr_id, :cant_id, :prov_id, :subtipo_id, :tipo_id, :categ_id, :calle_principal, :numero_direccion, :transversal_direccion, :barrio_direccion, :sitio_cercano, :latitud, :longitud, :altura, :clima, :temperatura, :precipitacion, :avatar)
     end
 end

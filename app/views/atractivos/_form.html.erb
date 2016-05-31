@@ -72,11 +72,37 @@
     <%= f.label :sitio_cercano, "Sitio poblado mas cercano" %>
     <%= f.text_field :sitio_cercano %>
   </div>
+  <div class="field">
+    <%= f.label :altura, "Altura (msnm)" %>
+    <%= f.text_field :altura %>
+  </div>
+  <div class="field">
+    <%= f.label :clima, "Clima" %>
+    <%= f.text_area :clima %>
+  </div>
+  <div class="field">
+    <%= f.label :temperatura, "Temperatura(C)" %>
+    <%= f.text_field :temperatura %>
+  </div>
+  <div class="field">
+    <%= f.label :precipitacion, "Precipitacio pluviometrica (mm)" %>
+    <%= f.text_field :precipitacion %>
+  </div>
   <div id="map-container">
       <div id="map-canvas"></div>
   </div>
   <%= f.hidden_field :latitud %>
   <%= f.hidden_field :longitud %>
+  </br>
+  <div class="field">
+    <%= f.label :avatar, "Archivo fotografico" %>
+    <%= f.file_field :avatar %>
+    <% if f.object.avatar? %>
+      <%= image_tag f.object.avatar.thumb.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit "Crear Atractivo" %>
   </div>

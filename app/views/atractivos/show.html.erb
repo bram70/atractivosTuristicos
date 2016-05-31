@@ -40,5 +40,10 @@
   <%= @atractivo.categ %>
 </p>
 
+<p>
+  <strong>Archivos fotograficos:</strong>
+  <%= image_tag @atractivo.avatar.thumb.url if @atractivo.avatar? %>
+</p>
+
 <%= link_to 'Editar', edit_atractivo_path(@atractivo) %> |
 <%= link_to 'Regresar', atractivos_path %>
