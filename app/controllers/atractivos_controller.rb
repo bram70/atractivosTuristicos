@@ -26,8 +26,14 @@ class AtractivosController < ApplicationController
 
   # GET /atractivos/1/edit
   def edit
-    @atractivo = Atractivo.find(params[:id])
+    @atractivo = Atractivo.new
     @provs = Prov.all
+    @cants = Cant.where("prov_id = ?", Prov.first.id)
+    @parrs = Parr.where("cant_id = ?", Cant.first.id)
+
+    @categs = Categ.all
+    @tipos = Tipo.where("categ_id = ?", Categ.first.id)
+    @subtipos = Subtipo.where("tipo_id = ?", Tipo.first.id)
   end
 
   # POST /atractivos
