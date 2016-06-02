@@ -21,12 +21,12 @@ $ ->
       type: 'GET'
       dataType: 'script'
       data: {
-        cant_id: $("#categs_select option:selected").val()
+        categ_id: $("#categs_select option:selected").val()
       }
   $(document).on 'change','#tipos_select', (evt) -> 
     $.ajax '/atractivos/add_subtipos',
       type: 'GET'
       dataType: 'script'
       data: {
-        cant_id: $("#tipos_select option:selected").val()
+        tipo_id: $("#tipos_select option:selected").val()
       }
