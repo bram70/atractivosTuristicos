@@ -2,5 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @atractivo %> |
-<%= link_to 'Back', atractivos_path %>
+<td><%= link_to @atractivo, class: "btn btn-default" do %>
+          <i class="glyphicon glyphicon-zoom-in"> Mostrar</i>
+          <% end %></td>
+<%= link_to atractivos_path, class: "btn btn-default" do %>
+  <i class="glyphicon glyphicon-chevron-left"> Regresar</i>
+<% end %>
