@@ -114,8 +114,8 @@ class AtractivosController < ApplicationController
       @cants = Cant.where("prov_id = ?", @atractivo.cant)
       @parrs = Parr.where("cant_id = ?", @atractivo.parr)
 
-      @categs = Categ.find(@atractivo.categ)
-      @tipos = Tipo.find(@atractivo.tipo)
+      @categs = Categ.where(@atractivo.categ)
+      @tipos = Tipo.where(@atractivo.tipo_id)
       @subtipos = Subtipo.where("tipo_id = ?", @atractivo.subtipo)
     end
 
