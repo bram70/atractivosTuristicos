@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Lista de Atractivos</h1>
-
-<table>
+<div class="panel panel-default">
+<div class="panel-heading">
+<%= link_to new_atractivo_path,class: "btn btn-primary" do %>
+  <i class="glyphicon glyphicon-pencil"> Nuevo</i>
+<% end %>
+</div>
+<table class="table">
   <thead>
     <tr>
+      <th>Imagen Atractivo</th>
       <th>Nombre</th>
       <th>Descripcion</th>
       <th>Parroquia</th>
@@ -20,17 +26,29 @@
   <tbody>
     <% @atractivos.each do |atractivo| %>
       <tr>
+        <td><%= image_tag atractivo.avatar.thumb.url if atractivo.avatar? %></td>
         <td><%= atractivo.name %></td>
-        <td><%= atractivo.description %></td>
+        <td>
+          <% text = atractivo.description %>
+          <%= truncate(text, :length => 150, :separator => ' ') do 
+              link_to 'see more', atractivo
+          end 
+          %></td>
         <td><%= atractivo.parr %></td>
         <td><%= atractivo.cant %></td>
         <td><%= atractivo.prov %></td>
         <td><%= atractivo.subtipo %></td>
         <td><%= atractivo.tipo %></td>
         <td><%= atractivo.categ %></td>
-        <td><%= link_to 'Mostrar', atractivo %></td>
-        <td><%= link_to 'Editar', edit_atractivo_path(atractivo) %></td>
-        <td><%= link_to 'Destruir', atractivo, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+        <td><%= link_to atractivo, class: "btn btn-default" do %>
+          <i class="glyphicon glyphicon-zoom-in"> Mostrar</i>
+          <% end %></td>
+        <td><%= link_to edit_atractivo_path(atractivo), class: "btn btn-default" do %>
+          <i class="glyphicon glyphicon-edit"> Editar</i>
+          <% end %></td>
+        <td><%= link_to atractivo, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-default" do %>
+          <i class="glyphicon glyphicon-remove"> Eliminar</i>
+          <% end %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +56,4 @@
 
 <br>
 
-<%= link_to 'Nuevo Atractivo', new_atractivo_path %>
+</div>
