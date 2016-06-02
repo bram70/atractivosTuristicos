@@ -4,7 +4,7 @@ class AtractivosController < ApplicationController
   # GET /atractivos
   # GET /atractivos.json
   def index
-    @atractivos = Atractivo.all
+    @atractivos = Atractivo.all.order(:prov_id)
   end
 
   # GET /atractivos/1
