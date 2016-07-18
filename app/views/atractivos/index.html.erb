@@ -36,7 +36,9 @@
             link_to 'ver más', atractivo, :class=>"noHover" 
           end 
           %></td>
-        <td class="col-md-8"><%= atractivo.codigo %></td>
+        <td class="col-md-8">
+          <%= if (atractivo.codigo) then atractivo.codigo else ("paso: " + atractivo.step.to_s + "/6") end  %>
+        </td>
       </tr>
     <% end %>
     <tr>
