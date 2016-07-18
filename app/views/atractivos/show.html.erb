@@ -14,7 +14,8 @@
   <strong>Descripción:</strong>
   <%= @atractivo.description %>
 </p>
-
+<input type="hidden" name="atractivo[latitud]" id="atractivo_latitud" value="<%= @atractivo.latitud %>">
+<input type="hidden" name="atractivo[longitud]" id="atractivo_longitud" value="<%= @atractivo.longitud %>">
 <p>
   <strong>Parroquia:</strong>
   <%= @atractivo.parr %>
@@ -29,7 +30,11 @@
   <strong>Provincia:</strong>
   <%= @atractivo.prov %>
 </p>
-
+<br>
+<div id="map-container">
+      <div id="map-canvas"></div>
+</div>
+<br>
 <p>
   <strong>Subtipo:</strong>
   <%= @atractivo.subtipo %>
@@ -82,6 +87,92 @@
   <%= @atractivo.precipitacion %>
 </p>
 
-<%= link_to atractivos_path, class: "btn btn-primary" do %>
+<%= link_to atractivos_path, class: "btn btn-primary noVisited" do %>
   <i class="glyphicon glyphicon-chevron-left"> Regresar</i>
 <% end %>
+<style>
+  a.noVisited:visited {color: #ffffff;}
+  a.noHover:hover { 
+    color: #428bca;
+    text-decoration: none;
+    background: transparent;
+  }
+</style>
+<script type="text/javascript">
+var map;
+
+var marker;
+var geocoder;
+function initialize() {
+
+  //var directionsService = new google.maps.DirectionsService();
+  //var directionsDisplay = new google.maps.DirectionsRenderer();
+  lat = document.getElementById("atractivo_latitud").value;
+  longi = document.getElementById("atractivo_longitud").value;
+  coordenadas = new google.maps.LatLng(lat, longi);
+  var mapOptions = {
+    center: coordenadas,
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.NORMAL,
+    panControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    draggable: false,
+    overviewMapControl: false
+  };
+  // initializing map
+  map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+  //directionsDisplay.setMap(map);
+  marker = createMarker(coordenadas, map, "Atractivo");
+    
+
+  /*prov_select = document.getElementById("provs_select");
+  provincia = prov_select.options[prov_select.selectedIndex].text;
+  cant_select = document.getElementById("cants_select");
+  canton = cant_select.options[cant_select.selectedIndex].text;
+  parr_select = document.getElementById("parrs_select");
+  parroquia = cant_select.options[parr_select.selectedIndex].text;
+
+  poblado_cercano = document.getElementById("atractivo_sitio_cercano").value;
+  if (!poblado_cercano) poblado_cercano = "Quito, Ecuador" ;
+  var request = 
+  {
+    origin: parroquia+","+canton+","+provincia+",Ecuador",
+    destination: poblado_cercano,
+    travelMode: google.maps.DirectionsTravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status)
+  {
+      if (status == google.maps.DirectionsStatus.OK)
+      {
+        directionsDisplay.setDirections(response);
+      }
+  });
+ */ 
+}
+
+function createInfoWindow(text){
+  var infowindow = new google.maps.InfoWindow({
+    content: text
+  });
+  return infowindow;
+}
+
+/*var parr_select = document.getElementById("parrs_select");
+parr_select.addEventListener(
+    'change', 
+    function() {toggleSelect(this.id)},
+    false
+    );*/
+
+function createMarker(coords, map, title){
+  return new google.maps.Marker({
+    position: coords,
+         map: map,
+         title: title,
+         draggable: false,
+         animation: google.maps.Animation.DROP
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&v=3.23&key=AIzaSyBJYFdplGeKUUEmGZ-vL4ydiSZ09Khsa_o&libraries=drawing&callback=initialize"></script>
