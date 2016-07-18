@@ -2,12 +2,27 @@ class CuestionariosController < ApplicationController
   def nextstep
     @atractivo_c = Atractivo.find(params[:id])
     @seccion_p = @atractivo_c.getNextSeccion()
-    @encabezado = Encabezado.getEncabezado(@atractivo_c.categ_id, @seccion_p)
-    @preg_seccion1 = @atractivo_c.preguntasxNameSeccion(@seccion_p)
-    @preg_seccion1.each do |pregunta|
-      pregunta.respuests.build
+
+    if @seccion_p
+      @encabezado = Encabezado.getEncabezado(@atractivo_c.categ_id, @seccion_p)
+      @preg_seccion1 = @atractivo_c.preguntasxNameSeccion(@seccion_p)
+      @preg_seccion1.each do |pregunta|
+        pregunta.respuests.build
+      end
+      @percentage = @atractivo_c.getPercentage()
+      respond_to do |format|
+        format.html { render :template => "cuestionarios/nextstep.html.erb" }
+      end
+    else
+      pa = PuntajeAtractivo.where(atractivo_id: @atractivo_c.id).first
+      jerarquia = pa.computeJerarquia() 
+      codigo = @atractivo_c.GenerateCodigoAtractivo(jerarquia)
+      @atractivo_c.codigo = codigo 
+      @atractivo_c.save!
+      respond_to do |format|
+        format.html { redirect_to url_for( :action => 'index', :controller => 'atractivos', notice: 'Atractivo creado satisfactoriamente.') }
+      end
     end
-    @percentage = @atractivo_c.getPercentage()
   end
 
   def savestep
@@ -35,7 +50,6 @@ class CuestionariosController < ApplicationController
         puntos = puntos + Seccion.getPuntaje(pregunta_id)
       end
     end
-
     pregunta_radio_button.each do |pregunta_id|
       pregunta = Pregunt.find(pregunta_id)
       resp = Respuest.where(rpta: true, pregunt_id: pregunta_id, atractivo_id: atractivo_id).first_or_create
@@ -49,32 +63,16 @@ class CuestionariosController < ApplicationController
 
     puntaje.puntos = puntaje.puntos + puntos
     puntaje.save!
+
     @atractivo_c = Atractivo.find(atractivo_id)
     @atractivo_c.step = @atractivo_c.step + 1
     @atractivo_c.save!
     ################
-    @seccion_p = @atractivo_c.getNextSeccion()
-
-    if @seccion_p
-      @encabezado = Encabezado.getEncabezado(@atractivo_c.categ_id, @seccion_p)
-      @preg_seccion1 = @atractivo_c.preguntasxNameSeccion(@seccion_p)
-      @preg_seccion1.each do |pregunta|
-        pregunta.respuests.build
-      end
-      @percentage = @atractivo_c.getPercentage()
-
-      respond_to do |format|
-        format.html { render :template => "cuestionarios/nextstep.html.erb", id: atractivo_id }
-      end
-    else
-      pa = PuntajeAtractivo.where(atractivo_id: atractivo_id).first
-      jerarquia = pa.computeJerarquia() 
-      codigo = @atractivo_c.GenerateCodigoAtractivo(jerarquia)
-      @atractivo_c.codigo = codigo 
-      @atractivo_c.save!
-      respond_to do |format|
-        format.html { redirect_to url_for( :action => 'index', :controller => 'atractivos', notice: 'Atractivo creado satisfactoriamente.') }
-      end
+    respond_to do |format|
+      format.html { redirect_to url_for( id: @atractivo_c.id,
+                                        :action => 'nextstep',
+                                        :controller => 'cuestionarios',
+                                        notice: "Paso #{@atractivo_c.step} completado satisfactoriamente") }
     end
   end
 end

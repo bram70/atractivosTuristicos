@@ -37,7 +37,8 @@
           end 
           %></td>
         <td class="col-md-8">
-          <%= if (atractivo.codigo) then atractivo.codigo else ("paso: " + atractivo.step.to_s + "/6") end  %>
+          <%= if (atractivo.codigo) then atractivo.codigo else link_to ("paso: " + atractivo.step.to_s + "/6"),
+                "cuestionarios/nextstep?id=#{atractivo.id}", :class => "noHover"  end  %>
         </td>
       </tr>
     <% end %>
