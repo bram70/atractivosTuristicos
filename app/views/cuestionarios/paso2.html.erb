@@ -1,0 +1,9 @@
+<%= form_tag(controller: "cuestionario", action: "savestep2", method: :post) do %>
+  <p><%= @atractivo.name.titleize %></p>
+  <%= fields_for(:respuest, @respuesta) do |resp_fields| %>
+    <div class= "">
+    <% @preguntas.each do |preg| %>
+      <%= resp_fields.label :texto %>
+    <% end %>
+    </div>
+  <% end %>

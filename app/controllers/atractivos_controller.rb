@@ -4,7 +4,7 @@ class AtractivosController < ApplicationController
   # GET /atractivos
   # GET /atractivos.json
   def index
-    @atractivos = Atractivo.all.order(:prov_id)
+    @atractivos = Atractivo.all.paginate(:page => params[:page], :per_page => 5).order('id DESC')
   end
 
   # GET /atractivos/1
@@ -15,13 +15,6 @@ class AtractivosController < ApplicationController
   # GET /atractivos/new
   def new
     @atractivo = Atractivo.new
-    @provs = Prov.all
-    @cants = Cant.where("prov_id = ?", Prov.first.id)
-    @parrs = Parr.where("cant_id = ?", Cant.first.id)
-
-    @categs = Categ.all
-    @tipos = Tipo.where("categ_id = ?", Categ.first.id)
-    @subtipos = Subtipo.where("tipo_id = ?", Tipo.first.id)
   end
 
   # GET /atractivos/1/edit
@@ -43,13 +36,11 @@ class AtractivosController < ApplicationController
 
     respond_to do |format|
       if @atractivo.save
-
-        format.html { redirect_to @atractivo, notice: 'Atractivo was successfully created.' }
-        format.json { render :show, status: :created, location: @atractivo }
+        format.html { redirect_to url_for(id: @atractivo.id, :action => 'nextstep', :controller => 'cuestionarios') }
+        #format.json { render :show, status: :created, location: @atractivo }
       else
-        @provs = Prov.all
         format.html { render :new }
-        format.json { render json: @atractivo.errors, status: :unprocessable_entity }
+        format.json { render json: @atractivo.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end

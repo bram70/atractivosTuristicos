@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  puntos: 1.5
+  atractivo_id: 
+
+two:
+  puntos: 1.5
+  atractivo_id: 

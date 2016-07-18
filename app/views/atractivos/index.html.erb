@@ -3,57 +3,55 @@
 <h1>Lista de Atractivos</h1>
 <div class="panel panel-default">
 <div class="panel-heading">
-<%= link_to new_atractivo_path,class: "btn btn-primary" do %>
+<%= link_to new_atractivo_path, class: "btn btn-primary noVisited" do %>
   <i class="glyphicon glyphicon-pencil"> Nuevo</i>
 <% end %>
 </div>
 <table class="table">
   <thead>
     <tr>
-      <th>Imagen Atractivo</th>
+      <th>Atractivo</th>
       <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>Parroquia</th>
-      <th>Canton</th>
-      <th>Provincia</th>
-      <th>Subtipo</th>
-      <th>Tipo</th>
-      <th>Categoria</th>
-      <th colspan="3"></th>
+      <th>Descripción</th>
+      <th>Código Atractivo</th>
     </tr>
   </thead>
 
   <tbody>
     <% @atractivos.each do |atractivo| %>
       <tr>
-        <td><%= image_tag atractivo.avatar.thumb.url if atractivo.avatar? %></td>
-        <td><%= atractivo.name %></td>
-        <td>
+        <td class="col-md-1">
+          <%= link_to atractivo, :class => "noHover" do %>
+          <%= image_tag atractivo.avatar.thumb.url, :class => "img-thumbnail" if atractivo.avatar? %>
+        <% end %>
+        </td>
+        <td class="col-md-3">
+          <%= link_to atractivo, :class => "noHover" do %>
+          <%= atractivo.name %>
+        <% end %>
+        </td>
+        <td class="col-md-4">
           <% text = atractivo.description %>
           <%= truncate(text, :length => 150, :separator => ' ') do 
-              link_to 'see more', atractivo
+            link_to 'ver más', atractivo, :class=>"noHover" 
           end 
           %></td>
-        <td><%= atractivo.parr %></td>
-        <td><%= atractivo.cant %></td>
-        <td><%= atractivo.prov %></td>
-        <td><%= atractivo.subtipo %></td>
-        <td><%= atractivo.tipo %></td>
-        <td><%= atractivo.categ %></td>
-        <td><%= link_to atractivo, class: "btn btn-default" do %>
-          <i class="glyphicon glyphicon-zoom-in"> Mostrar</i>
-          <% end %></td>
-        <td><%= link_to edit_atractivo_path(atractivo), class: "btn btn-default" do %>
-          <i class="glyphicon glyphicon-edit"> Editar</i>
-          <% end %></td>
-        <td><%= link_to atractivo, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-default" do %>
-          <i class="glyphicon glyphicon-remove"> Eliminar</i>
-          <% end %></td>
+        <td class="col-md-8"><%= atractivo.codigo %></td>
       </tr>
     <% end %>
+    <tr>
+      <%= will_paginate @atractivos, renderer: BootstrapPagination::Rails %>
+    </tr>
   </tbody>
 </table>
-
 <br>
-
 </div>
+<style>
+  a.noVisited:visited {color: #ffffff;}
+  a.noHover:hover { 
+    color: #428bca;
+    text-decoration: none;
+    background: transparent;
+  }
+</style>
+

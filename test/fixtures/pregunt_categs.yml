@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  puntaje: 1
+  seccion: MyString
+  pregunt_id: 
+  categ_id: 
+
+two:
+  puntaje: 1
+  seccion: MyString
+  pregunt_id: 
+  categ_id: 

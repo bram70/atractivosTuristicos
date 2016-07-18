@@ -1,0 +1,25 @@
+es:
+  will_paginate:
+    next_label: "Siguiente"
+    previous_label: "Anterior"
+  errors:
+    messages:
+      extension_white_list_error: "Formato de archivo erróneo"
+  activerecord:
+    models:
+      atractivo:
+    attributes:
+      atractivo:
+        name: "Nombre"
+        description: "Descripción"
+        avatar: "Imagen adjunta"
+    errors:
+      models:
+        atractivo:
+          attributes:
+            name:
+              blank: "no puede estar en blanco"
+            description:
+              blank: "no puede estar en blanco"
+            avatar: 
+              blank: "debe escojer una imagen"

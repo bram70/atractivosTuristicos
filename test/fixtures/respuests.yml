@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  texto: MyString
+  especifique: MyText
+  pregunt_id: 
+  atractivo_id: 
+
+two:
+  texto: MyString
+  especifique: MyText
+  pregunt_id: 
+  atractivo_id: 

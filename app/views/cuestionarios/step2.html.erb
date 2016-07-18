@@ -1,0 +1,53 @@
+<%= form_tag url_for(:action => @next_page, :controller => 'cuestionarios') do %>
+  <h1><%= @atractivo_c.name %> <small><%= @atractivo_c.categ %></small></h1>
+  <br>
+  <br>
+  <%= hidden_field_tag :atractivo, @atractivo_c.id %>
+  <%= fields_for(:seccion) do |resp|%>
+    <h4><%= @encabezado %></h4>
+    <p>
+    <% @preg_seccion1.each do |builder| %>
+      <% if builder.orden == 1 %>
+        </p>
+        <br>
+        <p><strong><%= Subencabezado.getSubencabezado(@atractivo_c.categ_id, @seccion_p, Seccion.getSubseccionByPregunta(builder.id)) %></strong></p>
+        <p class="bg-primary">
+      <% end %>
+      <% if builder.texto.size >= 60 %>
+        <p>
+        <label class="checkbox-inline" style="padding-left: 35px; padding-top:10px;">
+          <%= resp.send(builder.tipo.to_sym, builder.id) %>
+          <%= builder.orden.to_s + ". ) " %> <%= builder.texto %>   
+          <% if builder.text_adicional %>
+            <%= resp.text_field "texto"+builder.id.to_s, style: "width: 250px;", placeholder: "Especifique" %>
+          <% end %>
+        </label>
+        </p>
+      <% else %>
+        <% if builder.text_adicional %>
+          <p><label class="checkbox-inline" style="padding-left: 35px; padding-top:10px;">
+            <%= resp.send(builder.tipo.to_sym, builder.id) %>
+            <%= builder.orden.to_s + ". ) " %> <%= builder.texto %>   
+            <%= resp.text_field "texto"+builder.id.to_s, style: "width: 250px;", placeholder: "Especifique" %>
+          </label>
+          </p>
+        <% else %>
+          <label class="checkbox-inline" style="padding-left: 35px">
+            <%= resp.send(builder.tipo.to_sym, builder.id) %>
+            <%= builder.orden.to_s + ". ) " %> <%= builder.texto %>   
+          </label>
+        <% end %>
+      <% end %>
+    <% end %>
+   </p>
+  <% end %>
+  </br>
+  <button type="submit" class="btn btn-primary pull-right">
+    <i class="icon-user icon-white"></i> Continuar
+  </button>
+<% end %>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: <%= @percentage %>%;">
+    <%= @percentage %>%
+  </div>
+</div>

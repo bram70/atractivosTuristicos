@@ -13,6 +13,12 @@ Rails.application.routes.draw do
       get 'add_subtipos', to: 'atractivos#add_subtipos'
     end
   end
+  resources :cuestionarios do
+    collection do
+      get 'nextstep', to: 'cuestionarios#nextstep'
+      post 'savestep', to: 'cuestionarios#savestep'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
