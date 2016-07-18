@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+<%= image_tag @atractivo.avatar.url if @atractivo.avatar? %>
+</p>
 <p>
   <strong>Nombre:</strong>
   <%= @atractivo.name %>
 </p>
-
 <p>
-  <strong>Descripcion:</strong>
+  <strong>Código atractivo:</strong>
+  <%= @atractivo.codigo %>
+</p>
+<p>
+  <strong>Descripción:</strong>
   <%= @atractivo.description %>
 </p>
 
@@ -16,7 +21,7 @@
 </p>
 
 <p>
-  <strong>Canton:</strong>
+  <strong>Cantón:</strong>
   <%= @atractivo.cant %>
 </p>
 
@@ -41,13 +46,42 @@
 </p>
 
 <p>
-  <strong>Archivos fotograficos:</strong>
-  <%= image_tag @atractivo.avatar.thumb.url if @atractivo.avatar? %>
+  <strong>Calle principal:</strong>
+  <%= @atractivo.calle_principal %>
+</p>
+<p>
+  <strong>Número de dirección:</strong>
+  <%= @atractivo.numero_direccion %>
+</p>
+<p>
+  <strong>Calle transversal:</strong>
+  <%= @atractivo.transversal_direccion %>
+</p>
+<p>
+  <strong>Barrio :</strong>
+  <%= @atractivo.barrio_direccion %>
+</p>
+<p>
+  <strong>Sitio más cercano :</strong>
+  <%= @atractivo.sitio_cercano %>
+</p>
+<p>
+  <strong>Altura:</strong>
+  <%= @atractivo.altura %>
+</p>
+<p>
+  <strong>Clima:</strong>
+  <%= @atractivo.clima %>
+</p>
+<p>
+  <strong>Temperatura:</strong>
+  <%= @atractivo.temperatura %>
+</p>
+<p>
+  <strong>Precipitación:</strong>
+  <%= @atractivo.precipitacion %>
 </p>
 
-<%= link_to edit_atractivo_path(@atractivo), class: "btn btn-default" do %>
-  <i class="glyphicon glyphicon-pencil">Editar</i>
-<% end %>
-<%= link_to atractivos_path, class: "btn btn-default" do %>
+<%= link_to atractivos_path, class: "btn btn-primary" do %>
   <i class="glyphicon glyphicon-chevron-left"> Regresar</i>
 <% end %>
