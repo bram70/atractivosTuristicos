@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source "https://rails-assets.org"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -48,7 +49,8 @@ group :development do
   gem 'spring'
 end
 gem 'friendly_id', '~> 5.0.2'
-gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'rails-assets-bootstrap', ">= 4.0.0.alpha.2"
+gem 'rails-assets-tether'
 gem 'font-awesome-sass', '~> 4.0.2'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'will_paginate-bootstrap'
