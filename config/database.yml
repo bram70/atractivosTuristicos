@@ -83,5 +83,5 @@ test:
 production:
   <<: *default
   database: atractivos_production
-  username: atractivos
-  password: <%= ENV['ATRACTIVOS_DATABASE_PASSWORD'] %>
+  username: wanderbravo
+  password: 

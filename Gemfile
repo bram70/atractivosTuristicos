@@ -48,7 +48,7 @@ group :development do
   gem 'spring'
 end
 gem 'friendly_id', '~> 5.0.2'
-gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'font-awesome-sass', '~> 4.0.2'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'will_paginate-bootstrap'
+gem 'bootstrap-sass', '3.2.0.2'
