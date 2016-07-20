@@ -20,16 +20,142 @@ Parr.create(name: "Eloy Alfaro", cant_id: canton4.id)
 categoria1 = Categ.create(name: "Manifestaciones Culturales Tangibles")
 categoria2 = Categ.create(name: "Manifestaciones Culturales Intangibles")
 categoria3 = Categ.create(name: "Sitios Naturales")
+#### CULTURALES TANGIBLES
+tipoCT1 = Tipo.create(name: "Históricas", categ_id: categoria1.id)
+tipoCT2 = Tipo.create(name: "Etnografía", categ_id: categoria1.id)
+tipoCT3 = Tipo.create(name: "Realizaciones Técnicas y Científicas", categ_id: categoria1.id)
+tipoCT4 = Tipo.create(name: "Realizaciones Artísticas Contemporáneas", categ_id: categoria1.id)
+tipoCT5 = Tipo.create(name: "Acontecimientos Programados", categ_id: categoria1.id)
+#### CULTURALES INTANGIBLES
+tipoCI1 = Tipo.create(name: "Etnografía", categ_id: categoria2.id)
+tipoCI2 = Tipo.create(name: "Acontecimientos Programados", categ_id: categoria2.id)
+#### NATURALES
+tipoN1 = Tipo.create(name: "Montañas", categ_id: categoria3.id)
+tipoN2 = Tipo.create(name: "Planicies", categ_id: categoria3.id)
+tipoN3 = Tipo.create(name: "Desiertos", categ_id: categoria3.id)
+tipoN4 = Tipo.create(name: "Ambientes lacustres", categ_id: categoria3.id)
+tipoN5 = Tipo.create(name: "Ríos", categ_id: categoria3.id)
+tipoN6 = Tipo.create(name: "Bosques", categ_id: categoria3.id)
+tipoN7 = Tipo.create(name: "Aguas subterráneas", categ_id: categoria3.id)
+tipoN8 = Tipo.create(name: "Fenómenos espeleológicos", categ_id: categoria3.id)
+tipoN9 = Tipo.create(name: "Fenómenos geológicos", categ_id: categoria3.id)
+tipoN10 = Tipo.create(name: "Costas o Litorales", categ_id: categoria3.id)
+tipoN11 = Tipo.create(name: "Ambientes Marinos", categ_id: categoria3.id)
+tipoN12 = Tipo.create(name: "Tierras insulares", categ_id: categoria3.id)
 
-tipo1 = Tipo.create(name: "Historicas", categ_id: categoria1.id)
-tipo2 = Tipo.create(name: "Rios", categ_id: categoria3.id)
+# SUBTIPO CULTURALES TANGIBLES
+Subtipo.create(name: "Arquitecturas (CIVIL, RELIGIOSA, MILITAR)", tipo_id: tipoCT1.id)
+Subtipo.create(name: "Area Histórica", tipo_id: tipoCT1.id)
+Subtipo.create(name: "Ciudad Histórica", tipo_id: tipoCT1.id)
+Subtipo.create(name: "Mina Antigua", tipo_id: tipoCT1.id)
+Subtipo.create(name: "Area Arqueológica", tipo_id: tipoCT1.id)
 
-Subtipo.create(name: "Riachuelos", tipo_id: tipo2.id)
-Subtipo.create(name: "Rapidos", tipo_id: tipo2.id)
+Subtipo.create(name: "Grupos étnicos", tipo_id: tipoCT2.id)
+Subtipo.create(name: "Arquitectura vernácula", tipo_id: tipoCT2.id)
+Subtipo.create(name: "Manifestaciones religiosas, tradiciones y creencias populares", tipo_id: tipoCT2.id)
+Subtipo.create(name: "Música y Danza", tipo_id: tipoCT2.id)
+Subtipo.create(name: "Artesanía", tipo_id: tipoCT2.id)
+Subtipo.create(name: "Ferias y Mercados tradicionales", tipo_id: tipoCT2.id)
+Subtipo.create(name: "Comida y bebida típica", tipo_id: tipoCT2.id)
+Subtipo.create(name: "Shamanismo", tipo_id: tipoCT2.id)
 
-Subtipo.create(name: "Arquitecturas (CIVIL, RELIGIOSA, MILITAR)", tipo_id: tipo1.id)
-Subtipo.create(name: "Area Historicas", tipo_id: tipo1.id)
+Subtipo.create(name: "Obras técnicas", tipo_id: tipoCT3.id)
+Subtipo.create(name: "Centros científicos y técnicos", tipo_id: tipoCT3.id)
+Subtipo.create(name: "Zoológicos y exhibiciones de flora y fauna", tipo_id: tipoCT3.id)
+Subtipo.create(name: "Jardines botánicos", tipo_id: tipoCT3.id)
+Subtipo.create(name: "Centros Documentales y bibliotecas", tipo_id: tipoCT3.id)
 
+Subtipo.create(name: "Museos", tipo_id: tipoCT4.id)
+Subtipo.create(name: "Obras de arte", tipo_id: tipoCT4.id)
+Subtipo.create(name: "Pintura", tipo_id: tipoCT4.id)
+Subtipo.create(name: "Escultura", tipo_id: tipoCT4.id)
+Subtipo.create(name: "Galería", tipo_id: tipoCT4.id)
+
+Subtipo.create(name: "Artísticos", tipo_id: tipoCT5.id)
+Subtipo.create(name: "Fiestas turísticas populares", tipo_id: tipoCT5.id)
+Subtipo.create(name: "Feria y Congresos", tipo_id: tipoCT5.id)
+Subtipo.create(name: "Eventos deportivos y/o competencia", tipo_id: tipoCT5.id)
+Subtipo.create(name: "Eventos Gastronómicos", tipo_id: tipoCT5.id)
+
+# SUBTIPO CULTURALES INTANGIBLES
+Subtipo.create(name: "Grupos étnicos", tipo_id: tipoCI1.id)
+Subtipo.create(name: "Manifestaciones religiosas, tradiciones y creencias populares", tipo_id: tipoCI1.id)
+Subtipo.create(name: "Música y danza", tipo_id: tipoCI1.id)
+Subtipo.create(name: "Shamanismo", tipo_id: tipoCI1.id)
+
+Subtipo.create(name: "Artísticos", tipo_id: tipoCI2.id)
+Subtipo.create(name: "Fiestas turísticas populares", tipo_id: tipoCI2.id)
+Subtipo.create(name: "Feria y congresos", tipo_id: tipoCI2.id)
+Subtipo.create(name: "Eventos deportivos y/o competencia", tipo_id: tipoCI2.id)
+Subtipo.create(name: "Eventos Gastronómicos", tipo_id: tipoCI2.id)
+
+# SUBTIPO NATURALES 
+Subtipo.create(name: "Alta montaña", tipo_id: tipoN1.id)
+Subtipo.create(name: "Cerro", tipo_id: tipoN1.id)
+Subtipo.create(name: "Volcán", tipo_id: tipoN1.id)
+Subtipo.create(name: "Colina", tipo_id: tipoN1.id)
+Subtipo.create(name: "Nudo", tipo_id: tipoN1.id)
+
+Subtipo.create(name: "Llanura", tipo_id: tipoN2.id)
+Subtipo.create(name: "Salitre", tipo_id: tipoN2.id)
+Subtipo.create(name: "Valle", tipo_id: tipoN2.id)
+Subtipo.create(name: "Meseta", tipo_id: tipoN2.id)
+
+Subtipo.create(name: "Costero", tipo_id: tipoN3.id)
+Subtipo.create(name: "Del interior", tipo_id: tipoN3.id)
+
+Subtipo.create(name: "Lago", tipo_id: tipoN4.id)
+Subtipo.create(name: "Laguna", tipo_id: tipoN4.id)
+Subtipo.create(name: "Pantano", tipo_id: tipoN4.id)
+Subtipo.create(name: "Poza", tipo_id: tipoN4.id)
+Subtipo.create(name: "Humedal", tipo_id: tipoN4.id)
+
+Subtipo.create(name: "Riachuelo", tipo_id: tipoN5.id)
+Subtipo.create(name: "Rápido", tipo_id: tipoN5.id)
+Subtipo.create(name: "Cascada", tipo_id: tipoN5.id)
+Subtipo.create(name: "Ribera", tipo_id: tipoN5.id)
+Subtipo.create(name: "Delta", tipo_id: tipoN5.id)
+
+Subtipo.create(name: "Páramo", tipo_id: tipoN6.id)
+Subtipo.create(name: "Ceja de Selva", tipo_id: tipoN6.id)
+Subtipo.create(name: "Nublado", tipo_id: tipoN6.id)
+Subtipo.create(name: "Montano bajo", tipo_id: tipoN6.id)
+Subtipo.create(name: "Húmedo", tipo_id: tipoN6.id)
+Subtipo.create(name: "Manglar", tipo_id: tipoN6.id)
+Subtipo.create(name: "Seco", tipo_id: tipoN6.id)
+Subtipo.create(name: "Petrificado", tipo_id: tipoN6.id)
+
+Subtipo.create(name: "Manantial de agua mineral", tipo_id: tipoN7.id)
+Subtipo.create(name: "Manantial de agua termal", tipo_id: tipoN7.id)
+
+Subtipo.create(name: "Cueva o caverna", tipo_id: tipoN8.id)
+Subtipo.create(name: "Río subterráneo", tipo_id: tipoN8.id)
+
+Subtipo.create(name: "Flujo de lava", tipo_id: tipoN9.id)
+Subtipo.create(name: "Tubo de lava", tipo_id: tipoN9.id)
+Subtipo.create(name: "Géiser", tipo_id: tipoN9.id)
+Subtipo.create(name: "Escarpa de falla", tipo_id: tipoN9.id)
+Subtipo.create(name: "Solfatara", tipo_id: tipoN9.id)
+Subtipo.create(name: "Cañon", tipo_id: tipoN9.id)
+
+Subtipo.create(name: "Playa", tipo_id: tipoN10.id)
+Subtipo.create(name: "Acantilado", tipo_id: tipoN10.id)
+Subtipo.create(name: "Golfo", tipo_id: tipoN10.id)
+Subtipo.create(name: "Bahía", tipo_id: tipoN10.id)
+Subtipo.create(name: "Ensenada", tipo_id: tipoN10.id)
+Subtipo.create(name: "Canal", tipo_id: tipoN10.id)
+Subtipo.create(name: "Estuario", tipo_id: tipoN10.id)
+Subtipo.create(name: "Estero", tipo_id: tipoN10.id)
+
+Subtipo.create(name: "Arrecife de coral", tipo_id: tipoN11.id)
+Subtipo.create(name: "Cueva", tipo_id: tipoN11.id)
+Subtipo.create(name: "Cráter", tipo_id: tipoN11.id)
+
+Subtipo.create(name: "Isla continental", tipo_id: tipoN12.id)
+Subtipo.create(name: "Islote", tipo_id: tipoN12.id)
+Subtipo.create(name: "Roca", tipo_id: tipoN12.id)
+
+### PREGUNTAS
 pregunta1 = Pregunt.create(texto: "Tipo de ingreso Libre", tipo: "check_box", orden: 1)
 pregunta2 = Pregunt.create(texto: "Tipo de ingreso Restringido", tipo: "check_box", orden: 2)
 pregunta3 = Pregunt.create(texto: "Tipo de ingreso Pagado", tipo: "check_box", orden: 3)
@@ -65,7 +191,6 @@ subencabezadoC1 = Subencabezado.create(categ_id: seccionC1.categ_id, seccion_nam
 
 encabezadoN1 = Encabezado.create(categ_id: seccionN1.categ_id, seccion_name: seccionN1.name, encabezado: "ACCESIBILIDAD AL ATRACTIVO TURÍSTICO")
 subencabezadoN1 = Subencabezado.create(categ_id: seccionN1.categ_id, seccion_name: seccionN1.name, subseccion_name: seccionN1.subseccion, subencabezado: "Tipo de ingreso")
-
 
 seccion4 = Seccion.create(name: "A", subseccion: "SECCION_2", pregunt_id: pregunta4.id, categ_id: categoria1.id, puntaje: 3)
 seccionN4 = Seccion.create(name: "A", subseccion: "SECCION_2", pregunt_id: pregunta4.id, categ_id: categoria3.id, puntaje: 3)
@@ -186,6 +311,7 @@ MaxPuntajeSeccion.create(max: 11, seccion: seccion13.name, categ: categoria1.id)
 MaxPuntajeSeccion.create(max: 11, seccion: seccionC13.name, categ: categoria2.id)
 MaxPuntajeSeccion.create(max: 11, seccion: seccionN13.name, categ: categoria3.id)
 ##############################################################################################################
+# Seccion C Para Culturales Tangibles
 pregunta24 = Pregunt.create(texto: "Recorridos Autoguiados", tipo: "check_box", orden: 1)
 pregunta25 = Pregunt.create(texto: "Exposiciones (Permanentes, Temporales, Eventuales)", tipo: "check_box", orden: 2)
 pregunta26 = Pregunt.create(texto: "Exhibición de piezas, muestras, obras, etc, originales", tipo: "check_box", orden: 3)
@@ -212,7 +338,7 @@ seccion31 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: pregu
 seccion32 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: pregunta32.id, categ_id: categoria1.id, puntaje: 0.5)
 seccion33 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: pregunta33.id, categ_id: categoria1.id, puntaje: 0.5)
 
-seccionC24 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaC24.id, categ_id: categoria1.id, puntaje: 3)
+seccionC24 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaC24.id, categ_id: categoria2.id, puntaje: 3)
 seccionC25 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaC25.id, categ_id: categoria2.id, puntaje: 1)
 seccionC26 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaC26.id, categ_id: categoria2.id, puntaje: 1)
 
