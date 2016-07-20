@@ -2,7 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to atractivos_path, class: "btn btn-default" do %>
+<%= link_to atractivos_path, class: "btn btn-primary noVisited noHover" do %>
   <i class="glyphicon glyphicon-chevron-left"> Regresar</i>
 <% end %>
 <div class="progress">
@@ -10,3 +10,10 @@
     0%
   </div>
 </div>
+<style>
+  a.noVisited:visited {color: #ffffff;}
+  a.noHover:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+</style>

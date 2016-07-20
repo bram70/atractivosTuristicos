@@ -1,7 +1,7 @@
 <%= form_for @atractivo, :html => {:class => "form-horizontal center"} do |f| %>
   <% if @atractivo.errors.any? %>
     <div id="error_explanation" >
-      <h2><%= pluralize(@atractivo.errors.count, "error") %> prohibited this atractivo from being saved:</h2>
+      <h2><%= pluralize(@atractivo.errors.count, "error") %> no permitieron a éste atractivo de ser guardado:</h2>
 
       <ul>
       <% @atractivo.errors.full_messages.each do |message| %>
