@@ -78,6 +78,6 @@ class Atractivo < ActiveRecord::Base
 
   private
     def image_size_validation
-      errors[:avatar] << "Imagen debe ser menor que 500 KB" if avatar.size > 0.5.megabytes
+      errors[:avatar] << "Imagen debe ser menor que 3 MB" if avatar.size > 3.megabytes
     end
 end
