@@ -19,14 +19,14 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :description, "Descripcion", class: "col-md-2 control-label" %><br>
+    <%= f.label :description, "Descripción", class: "col-md-2 control-label" %><br>
     <div class="col-md-6">
       <%= f.text_area :description, class: "form-control", rows: "7" %>
     </div>
   </div>
   <br>
   <div class="form-group">
-    <%= f.label :categ_id, "Categoria" , class: "col-md-2 control-label"%>
+    <%= f.label :categ_id, "Categoría" , class: "col-md-2 control-label"%>
     <div class="col-md-6">
     <%= f.select :categ_id, options_for_select(Categ.all.collect { |categ|
       [categ.name.titleize, categ.id] }, 1), {}, { id: 'categs_select', class: "form-control"} %>
@@ -35,15 +35,13 @@
   <div class="form-group">
     <%= f.label :tipo_id, "Tipo" , class: "col-md-2 control-label"%>
     <div class="col-md-6">
-    <%= f.select :tipo_id, options_for_select(Tipo.all.collect { |tipo|
-      [tipo.name.titleize, tipo.id] }, 0), {}, { id: 'tipos_select', class: "form-control"} %>
+    <%= f.select :tipo_id, options_for_select( "Seleccione un tipo", 0), {}, { id: 'tipos_select', class: "form-control"} %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :subtipo_id, "Subtipo" , class: "col-md-2 control-label"%>
     <div class="col-md-6">
-    <%= f.select :subtipo_id, options_for_select(Subtipo.all.collect { |subtipo|
-      [subtipo.name.titleize, subtipo.id] }, 0), {}, { id: 'subtipos_select', class: "form-control"} %>
+    <%= f.select :subtipo_id, options_for_select( "Selecciones un subtipo" , 0), {}, { id: 'subtipos_select', class: "form-control"} %>
     </div>
   </div>
   <div class="form-group">
@@ -54,17 +52,15 @@
      </div>
   </div>
   <div class="form-group">
-    <%= f.label :cant_id, "Canton:", class: "col-md-2 control-label"%>
+    <%= f.label :cant_id, "Cantón:", class: "col-md-2 control-label"%>
     <div class="col-md-6">
-    <%= f.select :cant_id, options_for_select(Cant.all.collect { |cant|
-      [cant.name.titleize, cant.id] }, 0), {}, { id: 'cants_select', class: "form-control"} %>
+    <%= f.select :cant_id, options_for_select("", 0), {}, { id: 'cants_select', class: "form-control"} %>
      </div>
   </div>
   <div class="form-group">
     <%= f.label :parr_id, "Parroquia:", class: "col-md-2 control-label" %>
     <div class="col-md-6">
-    <%= f.select :parr_id, options_for_select(Parr.all.collect { |parr|
-      [parr.name.titleize, parr.id] }, 0), {}, { id: 'parrs_select', :onchange => "centerMapByParroquia()", class: "form-control" } %>
+    <%= f.select :parr_id, options_for_select("", 0), {}, { id: 'parrs_select', :onchange => "centerMapByParroquia()", class: "form-control" } %>
     </div>
   </div>
    <div id="map-container">
@@ -79,7 +75,7 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :numero_direccion, "Numero", class: "col-md-2 control-label" %>
+    <%= f.label :numero_direccion, "Número", class: "col-md-2 control-label" %>
     <div class="col-md-6">
     <%= f.text_field :numero_direccion, class: "form-control" %>
     </div>
@@ -122,7 +118,7 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :precipitacion, "Precipitación pluviometrica (mm)", class: "col-md-2 control-label" %>
+    <%= f.label :precipitacion, "Precipitación pluviométrica (mm)", class: "col-md-2 control-label" %>
     <div class="col-md-6">
     <%= f.text_field :precipitacion, class: "form-control" %>
     </div>
