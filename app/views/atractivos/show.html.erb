@@ -13,6 +13,10 @@
   <%= @atractivo.codigo %>
 </p>
 <p>
+  <strong>Jerarquia atractivo:</strong>
+  <%= @atractivo.jerarquia %>
+</p>
+<p>
   <strong>Descripción:</strong>
   <%= @atractivo.description %>
 </p>
@@ -38,20 +42,17 @@
 </div>
 <br>
 <p>
-  <strong>Subtipo:</strong>
-  <%= @atractivo.subtipo %>
+  <strong>Categoria:</strong>
+  <%= @atractivo.categ %>
 </p>
-
 <p>
   <strong>Tipo:</strong>
   <%= @atractivo.tipo %>
 </p>
-
 <p>
-  <strong>Categoria:</strong>
-  <%= @atractivo.categ %>
+  <strong>Subtipo:</strong>
+  <%= @atractivo.subtipo %>
 </p>
-
 <p>
   <strong>Calle principal:</strong>
   <%= @atractivo.calle_principal %>
@@ -78,15 +79,15 @@
 </p>
 <p>
   <strong>Clima:</strong>
-  <%= @atractivo.clima %>
+  <%= @atractivo.climate %>
 </p>
 <p>
   <strong>Temperatura:</strong>
-  <%= @atractivo.temperatura %>
+  <%= @atractivo.climate.temperature if @atractivo.climate.present? %>
 </p>
 <p>
   <strong>Precipitación:</strong>
-  <%= @atractivo.precipitacion %>
+  <%= @atractivo.climate.precipitation if @atractivo.climate.present? %>
 </p>
 
 <%= link_to atractivos_path, class: "btn btn-primary noVisited" do %>

@@ -18,6 +18,7 @@ class CuestionariosController < ApplicationController
       jerarquia = pa.computeJerarquia() 
       codigo = @atractivo_c.GenerateCodigoAtractivo(jerarquia)
       @atractivo_c.codigo = codigo 
+      @atractivo_c.jerarquia = pa.translateJerarquia(jerarquia) 
       @atractivo_c.save!
       respond_to do |format|
         format.html { redirect_to url_for( :action => 'index', :controller => 'atractivos', notice: 'Atractivo creado satisfactoriamente.') }

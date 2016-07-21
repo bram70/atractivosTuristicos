@@ -128,6 +128,6 @@ class AtractivosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atractivo_params
-      params.require(:atractivo).permit(:name, :description, :parr_id, :cant_id, :prov_id, :subtipo_id, :tipo_id, :categ_id, :calle_principal, :numero_direccion, :transversal_direccion, :barrio_direccion, :sitio_cercano, :latitud, :longitud, :altura, :clima, :temperatura, :precipitacion, avatar_atractivos_attributes: [:id, :atractivo_id, :avatar])
+      params.require(:atractivo).permit(:name, :description, :parr_id, :cant_id, :prov_id, :subtipo_id, :tipo_id, :categ_id, :calle_principal, :numero_direccion, :transversal_direccion, :barrio_direccion, :sitio_cercano, :latitud, :longitud, :altura, :climate_id, avatar_atractivos_attributes: [:id, :atractivo_id, :avatar])
     end
 end

@@ -20,4 +20,19 @@ class PuntajeAtractivo < ActiveRecord::Base
       0
     end
   end
+
+  def translateJerarquia(jerarquia)
+    case jerarquia 
+    when 1 
+      "I"
+    when 2 
+      "II"
+    when 3 
+      "III"
+    when 4 
+      "IV"
+    else
+      0
+    end
+  end
 end
