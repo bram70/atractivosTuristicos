@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <p>
-<%= image_tag @atractivo.avatar.url, :class => "img-responsive" if @atractivo.avatar? %>
+<% @avatar_atractivos.each do |p|%>
+  <%= image_tag p.avatar.url, :class => "img-responsive" if p.avatar? %>
+<% end %>
 </p>
 <p>
   <strong>Nombre:</strong>

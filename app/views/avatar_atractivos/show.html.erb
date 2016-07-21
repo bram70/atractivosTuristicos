@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Atractivo:</strong>
+  <%= @avatar_atractivo.atractivo_id %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @avatar_atractivo.avatar %>
+</p>
+
+<%= link_to 'Edit', edit_avatar_atractivo_path(@avatar_atractivo) %> |
+<%= link_to 'Back', avatar_atractivos_path %>

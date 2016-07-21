@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Avatar Atractivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atractivo</th>
+      <th>Avatar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avatar_atractivos.each do |avatar_atractivo| %>
+      <tr>
+        <td><%= avatar_atractivo.atractivo_id %></td>
+        <td><%= avatar_atractivo.avatar %></td>
+        <td><%= link_to 'Show', avatar_atractivo %></td>
+        <td><%= link_to 'Edit', edit_avatar_atractivo_path(avatar_atractivo) %></td>
+        <td><%= link_to 'Destroy', avatar_atractivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Avatar atractivo', new_avatar_atractivo_path %>

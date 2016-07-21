@@ -22,7 +22,7 @@
       <tr>
         <td class="col-md-1">
           <%= link_to atractivo, :class => "noHover" do %>
-          <%= image_tag atractivo.avatar.thumb.url, :class => "img-thumbnail" if atractivo.avatar? %>
+          <%= image_tag atractivo.avatar_atractivos.first.avatar.thumb.url, :class => "img-thumbnail" if (atractivo.avatar_atractivos.present? && atractivo.avatar_atractivos.first.avatar?) %>
         <% end %>
         </td>
         <td class="col-md-3">
