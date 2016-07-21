@@ -3,20 +3,21 @@ class Atractivo < ActiveRecord::Base
   belongs_to :cant
   belongs_to :parr
 
+  belongs_to :climate
   belongs_to :categ
   belongs_to :tipo
   belongs_to :subtipo
+  has_many :avatar_atractivos
+  accepts_nested_attributes_for :avatar_atractivos
 
-  validate :image_size_validation
   validates :name, :presence => true
   validates :description, :presence => true
   validates :parr_id, :presence => true
   validates :cant_id, :presence => true
   validates :prov_id, :presence => true
-  validates :avatar, :presence => true
-
-  # Add the upload image for an atractivo T
-  mount_uploader :avatar, AvatarUploader
+  validates :categ_id, :presence => true
+  validates :tipo_id, :presence => true
+  validates :subtipo_id, :presence => true
 
   after_create :populate_arrays
   attr_accessor :secciones, :percentage
@@ -75,9 +76,4 @@ class Atractivo < ActiveRecord::Base
      nil 
     end 
   }
-
-  private
-    def image_size_validation
-      errors[:avatar] << "Imagen debe ser menor que 3 MB" if avatar.size > 3.megabytes
-    end
 end

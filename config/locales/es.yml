@@ -13,6 +13,8 @@ es:
         name: "Nombre"
         description: "Descripción"
         avatar: "Imagen adjunta"
+        parr_id: "Parroquia"
+        cant_id: "Canton"
     errors:
       models:
         atractivo:

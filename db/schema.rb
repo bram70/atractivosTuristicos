@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718145715) do
+ActiveRecord::Schema.define(version: 20160721164725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,12 +35,17 @@ ActiveRecord::Schema.define(version: 20160718145715) do
     t.decimal  "latitud",               precision: 10, scale: 6
     t.decimal  "longitud",              precision: 10, scale: 6
     t.string   "altura"
-    t.text     "clima"
-    t.string   "temperatura"
-    t.string   "precipitacion"
-    t.string   "avatar"
     t.integer  "step",                                           default: 0
     t.string   "codigo"
+    t.integer  "climate_id"
+    t.string   "jerarquia"
+  end
+
+  create_table "avatar_atractivos", force: :cascade do |t|
+    t.integer  "atractivo_id"
+    t.string   "avatar"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "cants", force: :cascade do |t|
@@ -56,6 +61,14 @@ ActiveRecord::Schema.define(version: 20160718145715) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "climates", force: :cascade do |t|
+    t.string   "name"
+    t.string   "temperature"
+    t.string   "precipitation"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "encabezados", force: :cascade do |t|
@@ -159,6 +172,7 @@ ActiveRecord::Schema.define(version: 20160718145715) do
 
   add_index "tipos", ["categ_id"], name: "index_tipos_on_categ_id", using: :btree
 
+  add_foreign_key "atractivos", "climates"
   add_foreign_key "cants", "provs"
   add_foreign_key "parrs", "cants"
   add_foreign_key "puntaje_atractivos", "atractivos"

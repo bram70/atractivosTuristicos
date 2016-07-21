@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :avatar_atractivos
   resources :subtipos
   resources :tipos
   resources :categs
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       get 'add_parroquias', to: 'atractivos#add_parroquias'
       get 'add_tipos', to: 'atractivos#add_tipos'
       get 'add_subtipos', to: 'atractivos#add_subtipos'
+      get 'add_climate_data', to: 'atractivos#add_climate_data'
     end
   end
   resources :cuestionarios do

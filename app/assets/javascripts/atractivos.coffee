@@ -30,3 +30,10 @@ $ ->
       data: {
         tipo_id: $("#tipos_select option:selected").val()
       }
+  $(document).on 'change','#climate_select', (evt) -> 
+    $.ajax '/atractivos/add_climate_data',
+      type: 'GET'
+      dataType: 'script'
+      data: {
+        clima_id: $("#climate_select option:selected").val()
+      }

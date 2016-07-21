@@ -10,11 +10,13 @@ class AtractivosController < ApplicationController
   # GET /atractivos/1
   # GET /atractivos/1.json
   def show
+    @avatar_atractivos = @atractivo.avatar_atractivos.all
   end
 
   # GET /atractivos/new
   def new
     @atractivo = Atractivo.new
+    @avatar_atractivo = @atractivo.avatar_atractivos.build
   end
 
   # GET /atractivos/1/edit
@@ -36,9 +38,16 @@ class AtractivosController < ApplicationController
 
     respond_to do |format|
       if @atractivo.save
+        params[:avatar_atractivos]['avatar'].each do |a|
+          @avatar_atractivo = @atractivo.avatar_atractivos.new(:avatar => a, :atractivo_id => @atractivo.id)
+          if !@avatar_atractivo.save
+            format.html { render :new }
+            format.json { render json: @avatar_atractivo.errors.full_messages, status: :unprocessable_entity }
+          end
+        end
         format.html { redirect_to url_for(id: @atractivo.id, :action => 'nextstep', :controller => 'cuestionarios') }
-        #format.json { render :show, status: :created, location: @atractivo }
       else
+        @avatar_atractivo = @atractivo.avatar_atractivos.build
         format.html { render :new }
         format.json { render json: @atractivo.errors.full_messages, status: :unprocessable_entity }
       end
@@ -97,6 +106,13 @@ class AtractivosController < ApplicationController
     end
   end
 
+  def add_climate_data
+    @clima = Climate.find(params[:clima_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_atractivo
@@ -112,6 +128,6 @@ class AtractivosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atractivo_params
-      params.require(:atractivo).permit(:name, :description, :parr_id, :cant_id, :prov_id, :subtipo_id, :tipo_id, :categ_id, :calle_principal, :numero_direccion, :transversal_direccion, :barrio_direccion, :sitio_cercano, :latitud, :longitud, :altura, :clima, :temperatura, :precipitacion, :avatar)
+      params.require(:atractivo).permit(:name, :description, :parr_id, :cant_id, :prov_id, :subtipo_id, :tipo_id, :categ_id, :calle_principal, :numero_direccion, :transversal_direccion, :barrio_direccion, :sitio_cercano, :latitud, :longitud, :altura, :clima, :temperatura, :precipitacion, avatar_atractivos_attributes: [:id, :atractivo_id, :avatar])
     end
 end

@@ -1,10 +1,16 @@
-<%= form_for @atractivo, :html => {:class => "form-horizontal center"} do |f| %>
+<%= form_for @atractivo, :html => { :multipart => true, :class => "form-horizontal center"} do |f| %>
   <% if @atractivo.errors.any? %>
     <div id="error_explanation" >
       <h2><%= pluralize(@atractivo.errors.count, "error") %> no permitieron a éste atractivo de ser guardado:</h2>
+      <h2><%= pluralize(@avatar_atractivo.errors.count, "error") %> no permitieron a éste atractivo de ser guardado:</h2>
 
       <ul>
       <% @atractivo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+      <ul>
+      <% @avatar_atractivo.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -105,37 +111,42 @@
     <%= f.text_field :altura, class: "form-control" %>
     </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :clima, "Clima", class: "col-md-2 control-label" %>
+    <%= f.label :climate_id, "Clima" , class: "col-md-2 control-label"%>
     <div class="col-md-6">
-    <%= f.text_area :clima, class: "form-control" %>
+    <%= f.select :climate_id, options_for_select(Climate.all.collect { |clima|
+      [clima.name.titleize, clima.id] }, 1), {}, { id: 'climate_select', class: "form-control"} %>
     </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :temperatura, "Temperatura(C)", class: "col-md-2 control-label" %>
-    <div class="col-md-6">
-    <%= f.text_field :temperatura, class: "form-control" %>
+    <div class="input-group col-md-4 col-md-offset-3">
+      <div class="input-group-addon">temperatura:</div>
+      <%= text_field_tag 'temperature', "", class: "col-md-2 form-control", id: "temperature_id", readonly: true %>
+      <div class="input-group-addon">°C</div>
     </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :precipitacion, "Precipitación pluviométrica (mm)", class: "col-md-2 control-label" %>
-    <div class="col-md-6">
-    <%= f.text_field :precipitacion, class: "form-control" %>
+    <div class="input-group col-md-4 col-md-offset-3">
+      <div class="input-group-addon">precipitación:</div>
+      <%= text_field_tag 'precipitation', "", class: "col-md-2 form-control", id: "precipitation_id" , readonly: true%>
+      <div class="input-group-addon">mm3</div>
     </div>
   </div>
 
   <%= f.hidden_field :latitud %>
   <%= f.hidden_field :longitud %>
   </br>
+  <%= f.fields_for :avatar_atractivos do |p|%>
   <div class="form-group">
-    <%= f.label :avatar, "Archivo fotográfico", class: "col-md-2 control-label" %>
+    <%= p.label :avatar, "Archivo fotográfico", class: "col-md-2 control-label" %>
     <div class="col-md-6">
-    <%= f.file_field :avatar %>
-    <% if f.object.avatar? %>
-      <%= image_tag f.object.avatar.thumb.url %>
-    <% end %>
+      <%= p.file_field :avatar, :multiple => true, name: "avatar_atractivos[avatar][]" %>
     </div>
   </div>
+  <% end %>
   <button type="submit" class="btn btn-primary pull-right">
     <i class="icon-user icon-white"></i> Continuar
   </button>
