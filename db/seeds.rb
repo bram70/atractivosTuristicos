@@ -361,6 +361,10 @@ pregunta33 = Pregunt.create(texto: "Otros", tipo: "check_box", orden: 10, text_a
 preguntaC24 = Pregunt.create(texto: "Mantienen Costumbres y Tradiciones", tipo: "check_box", orden: 1)
 preguntaC25 = Pregunt.create(texto: "Información", tipo: "check_box", orden: 2)
 preguntaC26 = Pregunt.create(texto: "Organización", tipo: "check_box", orden: 3)
+## Seccion C para Naturales
+preguntaN27 = Pregunt.create(texto: "En el Agua", tipo: "check_box", orden: 1)
+preguntaN28 = Pregunt.create(texto: "En el Aire", tipo: "check_box", orden: 2)
+preguntaN29 = Pregunt.create(texto: "En la superficie terrestre", tipo: "check_box", orden: 3)
 
 seccion24 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: pregunta24.id, categ_id: categoria1.id, puntaje: 0.5)
 seccion25 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: pregunta25.id, categ_id: categoria1.id, puntaje: 0.5)
@@ -377,13 +381,20 @@ seccionC24 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preg
 seccionC25 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaC25.id, categ_id: categoria2.id, puntaje: 1)
 seccionC26 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaC26.id, categ_id: categoria2.id, puntaje: 1)
 
+seccionN27 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaN27.id, categ_id: categoria3.id, puntaje: 5)
+seccionN28 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaN28.id, categ_id: categoria3.id, puntaje: 5)
+seccionN29 = Seccion.create(name: "C", subseccion: "SECCION_1", pregunt_id: preguntaN29.id, categ_id: categoria3.id, puntaje: 5)
+
 encabezado3 = Encabezado.create(categ_id: seccion24.categ_id, seccion_name: seccion24.name, encabezado: "ACTIVIDADES QUE SE PRACTICAN EN EL SITIO / OTROS")
 encabezadoC3 = Encabezado.create(categ_id: seccionC24.categ_id, seccion_name: seccionC24.name, encabezado: "ACTIVIDADES QUE SE PRACTICAN EN EL SITIO / OTROS")
+encabezadoN3 = Encabezado.create(categ_id: seccionN27.categ_id, seccion_name: seccionN27.name, encabezado: "ACTIVIDADES QUE SE PRACTICAN EN EL SITIO / OTROS")
 subencabezado5 = Subencabezado.create(categ_id: seccion24.categ_id, seccion_name: seccion24.name, subseccion_name: seccion24.subseccion, subencabezado: "Tangibles")
 subencabezadoC5 = Subencabezado.create(categ_id: seccionC24.categ_id, seccion_name: seccionC24.name, subseccion_name: seccionC24.subseccion, subencabezado: "Intangibles")
+subencabezadoN5 = Subencabezado.create(categ_id: seccionN27.categ_id, seccion_name: seccionN27.name, subseccion_name: seccionN27.subseccion, subencabezado: "Actividades que se practican :")
 
 MaxPuntajeSeccion.create(max: 5, seccion: seccion24.name, categ: categoria1.id)
 MaxPuntajeSeccion.create(max: 5, seccion: seccionC24.name, categ: categoria2.id)
+MaxPuntajeSeccion.create(max: 5, seccion: seccionN27.name, categ: categoria3.id)
 ############################################################
 pregunta34 = Pregunt.create(texto: "Alterado", tipo: "check_box", orden: 1)
 
