@@ -17,6 +17,12 @@ es:
         cant_id: "Canton"
         prov_id: "Provincia"
         categ_id: "Categoria"
+        climate_id: "Clima"
+        calle_principal: "Calle principal"
+        numero_direccion: "Numero Calle"
+        transversal_direccion: "Transversal"
+        barrio_direccion: "Barrio"
+        sitio_cercano: "Sitio mas cercano"
     errors:
       models:
         atractivo:

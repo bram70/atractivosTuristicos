@@ -19,6 +19,14 @@ class Atractivo < ActiveRecord::Base
   validates :tipo_id, :presence => true
   validates :subtipo_id, :presence => true
 
+  validates :climate_id, :presence => true
+
+  validates :calle_principal, :presence => true
+  validates :numero_direccion, :presence => true
+  validates :transversal_direccion, :presence => true
+  validates :barrio_direccion, :presence => true
+  validates :sitio_cercano, :presence => true
+
   after_create :populate_arrays
   attr_accessor :secciones, :percentage
 
