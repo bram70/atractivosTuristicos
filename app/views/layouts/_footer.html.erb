@@ -1,17 +1,27 @@
 <div id="footer">
   <div class="container">
-
     <div class="row footer-first-row">
-
-      <div class="col-xs-12 text-center">
-        <p><small>
+      <div class="">
+        <div class="center-block container_img">
+        <%= image_tag 'logo-footer.png', :class=>"img-responsive center-block" %>
+        <p class=""><small>
           &copy; 2016 - Ministerio de Turismo del Ecuador
-          <br/>
-          Developed by:: <%= link_to "Wander Bravo", "http://www.linkedin.com/in/wanderbravo" %>
         </small></p>
+        </div>
       </div>
-
     </div>
-
   </div>
 </div>
+<style>
+  .container_img {
+    width: 300px;
+    height: 120px;
+  }
+  .container_img img{
+    width: 100px;
+    height: 50px;
+  }
+  .container_img p{
+    width: 100%;
+  }
+</style>
