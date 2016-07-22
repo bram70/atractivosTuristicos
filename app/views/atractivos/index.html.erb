@@ -7,13 +7,13 @@
   <i class="glyphicon glyphicon-pencil"> Nuevo</i>
 <% end %>
 </div>
-<table class="table">
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Atractivo</th>
       <th>Nombre</th>
       <th>Descripción</th>
-      <th>Jerarquia</th>
+      <th>Jerarquía</th>
       <th>Código Atractivo</th>
     </tr>
   </thead>
@@ -37,12 +37,19 @@
             link_to 'ver más', atractivo, :class=>"noHover" 
           end 
           %></td>
-        <td class="col-md-1">
-          <%= atractivo.jerarquia %>
+        <td class="col-md-1 text-center">
+          <%= if (atractivo.jerarquia) then atractivo.translateJerarquia else link_to ("Continuar (paso: " + atractivo.step.to_s + "/7)"),
+               "cuestionarios/nextstep?id=#{atractivo.id}", :class => "noHover"  end  %>
           </td>
         <td class="col-md-8">
-          <%= if (atractivo.codigo) then atractivo.codigo else link_to ("paso: " + atractivo.step.to_s + "/6"),
-                "cuestionarios/nextstep?id=#{atractivo.id}", :class => "noHover"  end  %>
+          <label class="code">Provincia<input readonly="readonly" name="prov" id="prov" value="<%= atractivo.formatCode atractivo.prov_id %>" /></label>
+          <label class="code">Canton<input readonly="readonly" name="cant" id="cant" value="<%= atractivo.formatCode atractivo.cant_id %>" /></label>
+          <label class="code">Parroquia<input readonly="readonly" name="parr" id="parr" value="<%= atractivo.formatCode atractivo.parr_id %>" /></label>
+          <label class="code">Categoria<input readonly="readonly" name="categ" id="categ" value="<%= atractivo.formatCode atractivo.categ_id %>" /></label>
+          <label class="code">Tipo<input readonly="readonly" name="tipo" id="tipo" value="<%= atractivo.formatCode atractivo.tipo_id %>" /></label>
+          <label class="code">Subtipo<input readonly="readonly" name="subt" id="subt" value="<%= atractivo.formatCode atractivo.subtipo_id %>" /></label>
+          <label class="code">Jerarquia<input readonly="readonly" name="subt" id="subt" value="<%= atractivo.formatCode atractivo.jerarquia %>" /></label>
+          <label class="code">Atractivo<input readonly="readonly" name="subt" id="subt" value="<%= atractivo.formatCode atractivo.id %>" /></label>
         </td>
       </tr>
     <% end %>
@@ -52,6 +59,26 @@
   </tbody>
 </table>
 <br>
+<style>
+input {
+  display: inline-block;
+  width: 3.5em;
+  width: 3em;
+  margin-right: .5em;
+  position: relative;
+  top: -3em;
+}
+.code{
+  display: inline-block;
+  width: 3.5em;
+  margin-right: .5em;
+  padding-top: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  font-family: serif;
+  font-size: 70%;
+}
+</style>
 </div>
 <style>
   a.noVisited:visited {color: #ffffff;}

@@ -40,7 +40,7 @@ class Atractivo < ActiveRecord::Base
   end
 
   def GenerateCodigoAtractivo(jerarquia)
-    codigo_atractivo = "" + formatCode(prov_id)+ "-" + formatCode(cant_id) + "-" + formatCode(parr_id) + "-" + formatCode(categ_id) + "-" + formatCode(tipo_id)+ "-" + formatCode(subtipo_id)+ "-" + formatCode(jerarquia) + "-" + formatCode(id)
+    codigo_atractivo = "" + formatCode(prov_id)+ "" + formatCode(cant_id) + "" + formatCode(parr_id) + "" + formatCode(categ_id) + "" + formatCode(tipo_id)+ "" + formatCode(subtipo_id)+ "" + formatCode(jerarquia) + "" + formatCode(id)
   end
 
   def formatCode(entero)
@@ -67,6 +67,21 @@ class Atractivo < ActiveRecord::Base
 
   def preguntasxNameSeccion(seccion)
     Atractivo.preguntas(categ_id, seccion)
+  end
+
+  def translateJerarquia
+    case jerarquia 
+    when "1" 
+      "I"
+    when "2"
+      "II"
+    when "3" 
+      "III"
+    when "4" 
+      "IV"
+    else
+      0
+    end
   end
 
   scope :preguntas, -> (cat, seccion){
