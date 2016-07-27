@@ -1410,212 +1410,212 @@ Parr.create(name: "EL TRIUNFO", cant_id: PATATE.id)
 Parr.create(name: "SUCRE", cant_id: PATATE.id)
 Parr.create(name: "LOS ANDES", cant_id: PATATE.id)
 ZAMORACHINCHIPE = Prov.create(name: "ZAMORA CHINCHIPE")
-  ZAMORA_CH = Cant.create(name: "ZAMORA", prov_id: ZAMORACHINCHIPE.id)
-    ZAMORA
-    EL LIMON
-    ZAMORA
-    CUMBARATZA
-    SABANILLA
-    GUADALUPE
-    TIMBARA
-    IMBANA (LA VICTORIA DE IMBANA)
-    ZUMBI
-    PAQUISHA
-    SAN CARLOS DE LAS MINAS
-  ELPANGUI = Cant.create(name: "EL PANGUI", prov_id: ZAMORACHINCHIPE.id)
-    EL PANGUI
-    EL GUISME
-    TUNDAYME
-    PACHICUTZA
-  CHINCHIPE = Cant.create(name: "CHINCHIPE", prov_id: ZAMORACHINCHIPE.id)
-    ZUMBA
-    CHITO
-    PUCAPAMBA
-    EL CHORRO
-    SAN FRANCISCO DEL VERGEL
-    EL PORVENIR DEL CARMEN
-    VALLADOLID
-    LA CHONTA
-    SAN ANDRES
-    PALANDA
-  CENTINELADELCONDOR = Cant.create(name: "CENTINELA DEL CONDOR", prov_id: ZAMORACHINCHIPE.id)
-    ZUMBI
-    PANGUINTZA
-    TRIUNFO-DORADO
-  NANGARITZA = Cant.create(name: "NANGARITZA", prov_id: ZAMORACHINCHIPE.id)
-    GUAYZIMI
-    ZURMI
-    NUEVO PARAISO
-  PALANDA = Cant.create(name: "PALANDA", prov_id: ZAMORACHINCHIPE.id)
-    PALANDA
-    EL PORVENIR DEL CARMEN
-    VALLADOLID
-    SAN FRANCISCO DEL VERGEL
-    LA CANELA
-  YACUAMBI = Cant.create(name: "YACUAMBI", prov_id: ZAMORACHINCHIPE.id)
-    28 DE MAYO (SAN JOSE DE YACUAMBI)
-    LA PAZ
-    TUTUPALI
-  PAQUISHA = Cant.create(name: "PAQUISHA", prov_id: ZAMORACHINCHIPE.id)
-    PAQUISHA
-    BELLAVISTA
-    NUEVO QUITO
-  YANTZAZA = Cant.create(name: "YANTZAZA", prov_id: ZAMORACHINCHIPE.id)
-    YANTZAZA (YANZATZA)
-    CHICAÑA
-    LOS ENCUENTROS
+ZAMORA_CH = Cant.create(name: "ZAMORA", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "ZAMORA", cant_id: ZAMORA_CH.id)
+Parr.create(name: "EL LIMON", cant_id: ZAMORA_CH.id)
+Parr.create(name: "ZAMORA", cant_id: ZAMORA_CH.id)
+Parr.create(name: "CUMBARATZA", cant_id: ZAMORA_CH.id)
+Parr.create(name: "SABANILLA", cant_id: ZAMORA_CH.id)
+Parr.create(name: "GUADALUPE", cant_id: ZAMORA_CH.id)
+Parr.create(name: "TIMBARA", cant_id: ZAMORA_CH.id)
+Parr.create(name: "IMBANA (LA VICTORIA DE IMBANA)", cant_id: ZAMORA_CH.id)
+Parr.create(name: "ZUMBI", cant_id: ZAMORA_CH.id)
+Parr.create(name: "PAQUISHA", cant_id: ZAMORA_CH.id)
+Parr.create(name: "SAN CARLOS DE LAS MINAS", cant_id: ZAMORA_CH.id)
+ELPANGUI = Cant.create(name: "EL PANGUI", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "EL PANGUI", cant_id: ELPANGUI.id)
+Parr.create(name: "EL GUISME", cant_id: ELPANGUI.id)
+Parr.create(name: "TUNDAYME", cant_id: ELPANGUI.id)
+Parr.create(name: "PACHICUTZA", cant_id: ELPANGUI.id)
+CHINCHIPE = Cant.create(name: "CHINCHIPE", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "ZUMBA", cant_id: CHINCHIPE.id)
+Parr.create(name: "CHITO", cant_id: CHINCHIPE.id)
+Parr.create(name: "PUCAPAMBA", cant_id: CHINCHIPE.id)
+Parr.create(name: "EL CHORRO", cant_id: CHINCHIPE.id)
+Parr.create(name: "SAN FRANCISCO DEL VERGEL", cant_id: CHINCHIPE.id)
+Parr.create(name: "EL PORVENIR DEL CARMEN", cant_id: CHINCHIPE.id)
+Parr.create(name: "VALLADOLID", cant_id: CHINCHIPE.id)
+Parr.create(name: "LA CHONTA", cant_id: CHINCHIPE.id)
+Parr.create(name: "SAN ANDRES", cant_id: CHINCHIPE.id)
+Parr.create(name: "PALANDA", cant_id: CHINCHIPE.id)
+CENTINELADELCONDOR = Cant.create(name: "CENTINELA DEL CONDOR", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "ZUMBI", cant_id: CENTINELADELCONDOR.id)
+Parr.create(name: "PANGUINTZA", cant_id: CENTINELADELCONDOR.id)
+Parr.create(name: "TRIUNFO-DORADO", cant_id: CENTINELADELCONDOR.id)
+NANGARITZA = Cant.create(name: "NANGARITZA", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "GUAYZIMI", cant_id: NANGARITZA.id)
+Parr.create(name: "ZURMI", cant_id: NANGARITZA.id)
+Parr.create(name: "NUEVO PARAISO", cant_id: NANGARITZA.id)
+PALANDA = Cant.create(name: "PALANDA", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "PALANDA", cant_id: PALANDA.id)
+Parr.create(name: "EL PORVENIR DEL CARMEN", cant_id: PALANDA.id)
+Parr.create(name: "VALLADOLID", cant_id: PALANDA.id)
+Parr.create(name: "SAN FRANCISCO DEL VERGEL", cant_id: PALANDA.id)
+Parr.create(name: "LA CANELA", cant_id: PALANDA.id)
+YACUAMBI = Cant.create(name: "YACUAMBI", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "28 DE MAYO (SAN JOSE DE YACUAMBI)", cant_id: YACUAMBI.id)
+Parr.create(name: "LA PAZ", cant_id: YACUAMBI.id)
+Parr.create(name: "TUTUPALI", cant_id: YACUAMBI.id)
+PAQUISHA = Cant.create(name: "PAQUISHA", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "PAQUISHA", cant_id: PAQUISHA.id)
+Parr.create(name: "BELLAVISTA", cant_id: PAQUISHA.id)
+Parr.create(name: "NUEVO QUITO", cant_id: PAQUISHA.id)
+YANTZAZA = Cant.create(name: "YANTZAZA", prov_id: ZAMORACHINCHIPE.id)
+Parr.create(name: "YANTZAZA (YANZATZA)", cant_id: YANTZAZA.id)
+Parr.create(name: "CHICAÑA", cant_id: YANTZAZA.id)
+Parr.create(name: "LOS ENCUENTROS", cant_id: YANTZAZA.id)
 GALAPAGOS = Prov.create(name: "GALAPAGOS")
-  SANCRISTOBAL_C = Cant.create(name: "SAN CRISTOBAL", prov_id: GALAPAGOS.id)
-    PUERTO BAQUERIZO MORENO
-    EL PROGRESO
-    ISLA SANTA MARIA (FLOREANA) (CAB. EN  PTO. VELASCO IBARRA)
-    ESPAÑOLA 'HOOD'
-    GENOVESA 'TOWER'
-    SANTA FE 'BARRINGTON'
-  SANTACRUZ_C = Cant.create(name: "SANTA CRUZ ", prov_id: GALAPAGOS.id)
-    PUERTO AYORA
-    BELLAVISTA
-    SANTA ROSA (INCLUYE LA ISLA BALTRA)
-    MARCHENA 'BINDLOE'
-    PINTA 'ABIGDON'
-    PINZON 'DUNCAN'
-    RABIDA 'JERVIS'
-    SANTIAGO 'SAN SALVADOR O JAMES'
-    BALTRA
-    MARCHENA 'BINDLOE'
-    SEYMOUR    
-  ISABELA = Cant.create(name: "ISABELA", prov_id: GALAPAGOS.id)
-    PUERTO VILLAMIL
-    TOMAS DE BERLANGA (SANTO TOMAS)
-    CHARLES DARWIN 'CULPEPPER'
-    TEODORO WOLF 'WENMEN'
-    FERNANDINA 'NARBOROUGH'
+SANCRISTOBAL_C = Cant.create(name: "SAN CRISTOBAL", prov_id: GALAPAGOS.id)
+Parr.create(name: "PUERTO BAQUERIZO MORENO", cant_id: SANCRISTOBAL_C.id)
+Parr.create(name: "EL PROGRESO", cant_id: SANCRISTOBAL_C.id)
+Parr.create(name: "ISLA SANTA MARIA (FLOREANA)", cant_id: SANCRISTOBAL_C.id)
+Parr.create(name: "ESPAÑOLA 'HOOD'", cant_id: SANCRISTOBAL_C.id)
+Parr.create(name: "GENOVESA 'TOWER'", cant_id: SANCRISTOBAL_C.id)
+Parr.create(name: "SANTA FE 'BARRINGTON'", cant_id: SANCRISTOBAL_C.id)
+SANTACRUZ_C = Cant.create(name: "SANTA CRUZ ", prov_id: GALAPAGOS.id)
+Parr.create(name: "PUERTO AYORA", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "BELLAVISTA", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "SANTA ROSA", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "MARCHENA 'BINDLOE'", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "PINTA 'ABIGDON'", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "PINZON 'DUNCAN'", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "RABIDA 'JERVIS'", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "SANTIAGO 'SAN SALVADOR O JAMES'", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "BALTRA", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "MARCHENA 'BINDLOE'", cant_id: SANTACRUZ_C.id)
+Parr.create(name: "SEYMOUR", cant_id: SANTACRUZ_C.id)
+ISABELA = Cant.create(name: "ISABELA", prov_id: GALAPAGOS.id)
+Parr.create(name: "PUERTO VILLAMIL", cant_id: ISABELA.id)
+Parr.create(name: "TOMAS DE BERLANGA (SANTO TOMAS)", cant_id: ISABELA.id)
+Parr.create(name: "CHARLES DARWIN 'CULPEPPER'", cant_id: ISABELA.id)
+Parr.create(name: "TEODORO WOLF 'WENMEN'", cant_id: ISABELA.id)
+Parr.create(name: "FERNANDINA 'NARBOROUGH'", cant_id: ISABELA.id)
 SUCUMBIOS = Prov.create(name: "SUCUMBIOS")
-  LAGOAGRIO = Cant.create(name: "LAGO AGRIO", prov_id: SUCUMBIOS.id)
-    NUEVA LOJA
-    CUYABENO
-    PACAYACU
-    DURENO
-    JAMBELI
-    GENERAL FARFAN
-    SANTA CECILIA
-    TARAPOA
-    AGUAS NEGRAS
-    EL ENO
-    10 DE AGOSTO
-  SUCUMBIOS= Cant.create(name: "SUCUMBIOS", prov_id: SUCUMBIOS.id)
-    LA BONITA
-    EL PLAYON DE SAN FRANCISCO
-    ROSA FLORIDA
-    LA SOFIA
-    SANTA BARBARA
-  GONZALOPIZARRO= Cant.create(name: "GONZALO PIZARRO", prov_id: SUCUMBIOS.id)
-    LUMBAQUI
-    EL REVENTADOR
-    PUERTO LIBRE
-    GONZALO PIZARRO
-    SANTA ROSA DE SUCUMBIOS
-    LUMBAQUI
-  CASCALES = Cant.create(name: "CASCALES", prov_id: SUCUMBIOS.id)
-    EL DORADO DE CASCALES
-    SANTA ROSA DE SUCUMBIOS
-    SEVILLA
-  PUTUMAYO = Cant.create(name: "PUTUMAYO", prov_id: SUCUMBIOS.id)
-    PUERTO EL CARMEN DEL PUTUMAYO
-    PALMA ROJA
-    PUERTO RODRIGUEZ
-    PUERTO BOLIVAR (PUERTO MONTUFAR)
-    SANTA ELENA
-  CUYABENO= Cant.create(name: "CUYABENO", prov_id: SUCUMBIOS.id)
-    TARAPOA
-    CUYABENO
-    AGUAS NEGRAS
-  SHUSHUFINDI= Cant.create(name: "", prov_id: SUCUMBIOS.id)
-    SHUSHUFINDI
-    LIMONCOCHA
-    SAN PEDRO DE LOS COFANES
-    PAÑACOCHA
-    SIETE DE JULIO
-    SAN ROQUE (CAB. EN SAN VICENTE)
+LAGOAGRIO = Cant.create(name: "LAGO AGRIO", prov_id: SUCUMBIOS.id)
+Parr.create(name: "NUEVA LOJA", cant_id: LAGOAGRIO.id)
+Parr.create(name: "CUYABENO", cant_id: LAGOAGRIO.id)
+Parr.create(name: "PACAYACU", cant_id: LAGOAGRIO.id)
+Parr.create(name: "DURENO", cant_id: LAGOAGRIO.id)
+Parr.create(name: "JAMBELI", cant_id: LAGOAGRIO.id)
+Parr.create(name: "GENERAL FARFAN", cant_id: LAGOAGRIO.id)
+Parr.create(name: "SANTA CECILIA", cant_id: LAGOAGRIO.id)
+Parr.create(name: "TARAPOA", cant_id: LAGOAGRIO.id)
+Parr.create(name: "AGUAS NEGRAS", cant_id: LAGOAGRIO.id)
+Parr.create(name: "EL ENO", cant_id: LAGOAGRIO.id)
+Parr.create(name: "10 DE AGOSTO", cant_id: LAGOAGRIO.id)
+SUCUMBIOS= Cant.create(name: "SUCUMBIOS", prov_id: SUCUMBIOS.id)
+Parr.create(name: "LA BONITA", cant_id: SUCUMBIOS.id)
+Parr.create(name: "EL PLAYON DE SAN FRANCISCO", cant_id: SUCUMBIOS.id)
+Parr.create(name: "ROSA FLORIDA", cant_id: SUCUMBIOS.id)
+Parr.create(name: "LA SOFIA", cant_id: SUCUMBIOS.id)
+Parr.create(name: "SANTA BARBARA", cant_id: SUCUMBIOS.id)
+GONZALOPIZARRO= Cant.create(name: "GONZALO PIZARRO", prov_id: SUCUMBIOS.id)
+Parr.create(name: "LUMBAQUI", cant_id: GONZALOPIZARRO.id)
+Parr.create(name: "EL REVENTADOR", cant_id: GONZALOPIZARRO.id)
+Parr.create(name: "PUERTO LIBRE", cant_id: GONZALOPIZARRO.id)
+Parr.create(name: "GONZALO PIZARRO", cant_id: GONZALOPIZARRO.id)
+Parr.create(name: "SANTA ROSA DE SUCUMBIOS", cant_id: GONZALOPIZARRO.id)
+Parr.create(name: "LUMBAQUI", cant_id: GONZALOPIZARRO.id)
+CASCALES = Cant.create(name: "CASCALES", prov_id: SUCUMBIOS.id)
+Parr.create(name: "EL DORADO DE CASCALES", cant_id: CASCALES.id)
+Parr.create(name: "SANTA ROSA DE SUCUMBIOS", cant_id: CASCALES.id)
+Parr.create(name: "SEVILLA", cant_id: CASCALES.id)
+PUTUMAYO = Cant.create(name: "PUTUMAYO", prov_id: SUCUMBIOS.id)
+Parr.create(name: "PUERTO EL CARMEN DEL PUTUMAYO", cant_id: PUTUMAYO.id)
+Parr.create(name: "PALMA ROJA", cant_id: PUTUMAYO.id)
+Parr.create(name: "PUERTO RODRIGUEZ", cant_id: PUTUMAYO.id)
+Parr.create(name: "PUERTO BOLIVAR (PUERTO MONTUFAR)", cant_id: PUTUMAYO.id)
+Parr.create(name: "SANTA ELENA", cant_id: PUTUMAYO.id)
+CUYABENO= Cant.create(name: "CUYABENO", prov_id: SUCUMBIOS.id)
+Parr.create(name: "TARAPOA", cant_id: CUYABENO.id)
+Parr.create(name: "CUYABENO", cant_id: CUYABENO.id)
+Parr.create(name: "AGUAS NEGRAS", cant_id: CUYABENO.id)
+SHUSHUFINDI= Cant.create(name: "", prov_id: SUCUMBIOS.id)
+Parr.create(name: "SHUSHUFINDI", cant_id: SHUSHUFINDI.id)
+Parr.create(name: "LIMONCOCHA", cant_id: SHUSHUFINDI.id)
+Parr.create(name: "SAN PEDRO DE LOS COFANES", cant_id: SHUSHUFINDI.id)
+Parr.create(name: "PAÑACOCHA", cant_id: SHUSHUFINDI.id)
+Parr.create(name: "SIETE DE JULIO", cant_id: SHUSHUFINDI.id)
+Parr.create(name: "SAN ROQUE", cant_id: SHUSHUFINDI.id)
 ORELLANA = Prov.create(name: "ORELLANA")
-  ORELLANA= Cant.create(name: "ORELLANA", prov_id: ORELLANA.id)
-    PUERTO FRANCISCO DE ORELLANA (EL COCA)
-    DAYUMA
-    LA BELLEZA
-    TARACOA (NUEVA ESPERANZA: YUCA)
-    NUEVO PARAISO (CAB. EN UNION CHIMBORAZO)
-    ALEJANDRO LABAKA
-    EL DORADO
-    SAN JOSE DE GUAYUSA
-    EL EDEN
-    SAN LUIS DE ARMENIA
-    GARCIA MORENO
-    INES ARANGO (CAB. EN WESTERN)
-  LAJOYADELOSSACHAS= Cant.create(name: "LA JOYA DE LOS SACHAS", prov_id: ORELLANA.id)
-    LA JOYA DE LOS SACHAS
-    ENOKANQUI
-    LAGO SAN PEDRO
-    POMPEYA
-    RUMIPAMBA
-    SAN CARLOS
-    TRES DE NOVIEMBRE
-    SAN SEBASTIAN DEL COCA
-    UNION MILAGRE¥A
-  AGUARICO= Cant.create(name: "AGUARICO", prov_id: ORELLANA.id)
-    NUEVO ROCAFUERTE
-    CAPITAN AUGUSTO RIVADENEYRA
-    TIPUTINI
-    CONONACO
-    YASUNI
-    SANTA MARIA DE HUIRIRIMA
-  LORETO= Cant.create(name: "LORETO", prov_id: ORELLANA.id)
-    LORETO
-    AVILA (CAB. EN HUIRUNO)
-    SAN JOSE DE DAHUANO
-    PUERTO MURIALDO
-    SAN VICENTE DE HUATICOCHA
-    SAN JOSE DE PAYAMINO
+ORELLANA_CANT= Cant.create(name: "ORELLANA", prov_id: ORELLANA.id)
+Parr.create(name: "PUERTO FRANCISCO DE ORELLANA (EL COCA)", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "DAYUMA", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "LA BELLEZA", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "TARACOA (NUEVA ESPERANZA YUCA)", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "NUEVO PARAISO", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "ALEJANDRO LABAKA", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "EL DORADO", cant_id: ORELLANA_CANT.id)
+Parr.create(name: " SAN JOSE DE GUAYUSA", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "EL EDEN", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "SAN LUIS DE ARMENIA", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "GARCIA MORENO", cant_id: ORELLANA_CANT.id)
+Parr.create(name: "INES ARANGO", cant_id: ORELLANA_CANT.id)
+LAJOYADELOSSACHAS= Cant.create(name: "LA JOYA DE LOS SACHAS", prov_id: ORELLANA.id)
+Parr.create(name: "LA JOYA DE LOS SACHAS", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "ENOKANQUI", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "LAGO SAN PEDRO", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "POMPEYA", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "RUMIPAMBA", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "SAN CARLOS", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "TRES DE NOVIEMBRE", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "SAN SEBASTIAN DEL COCA", cant_id: LAJOYADELOSSACHAS.id)
+Parr.create(name: "UNION MILAGREÑA", cant_id: LAJOYADELOSSACHAS.id)
+AGUARICO= Cant.create(name: "AGUARICO", prov_id: ORELLANA.id)
+Parr.create(name: "NUEVO ROCAFUERTE", cant_id: AGUARICO.id)
+Parr.create(name: "CAPITAN AUGUSTO RIVADENEYRA", cant_id: AGUARICO.id)
+Parr.create(name: "TIPUTINI", cant_id: AGUARICO.id)
+Parr.create(name: "CONONACO", cant_id: AGUARICO.id)
+Parr.create(name: "YASUNI", cant_id: AGUARICO.id)
+Parr.create(name: "SANTA MARIA DE HUIRIRIMA", cant_id: AGUARICO.id)
+LORETO= Cant.create(name: "LORETO", prov_id: ORELLANA.id)
+Parr.create(name: "LORETO", cant_id: LORETO.id)
+Parr.create(name: "AVILA", cant_id: LORETO.id)
+Parr.create(name: "SAN JOSE DE DAHUANO", cant_id: LORETO.id)
+Parr.create(name: "PUERTO MURIALDO", cant_id: LORETO.id)
+Parr.create(name: "SAN VICENTE DE HUATICOCHA", cant_id: LORETO.id)
+Parr.create(name: "SAN JOSE DE PAYAMINO", cant_id: LORETO.id)
 STODOMINGO = Prov.create(name: "SANTO DOMINGO DE LOS TSACHILAS")
-  SANTODOMINGO= Cant.create(name: "SANTO DOMINGO", prov_id: STODOMINGO.id)
-    SANTO DOMINGO DE LOS COLORADOS
-    ABRAHAM CALAZACON
-    RIO VERDE
-    BOMBOLI
-    CHIGUILPE
-    ZARACAY
-    RIO TOACHI
-    ALLURIQUIN
-    VALLE HERMOSO
-    PUERTO LIMON
-    EL ESFUERZO
-    LUZ DE AMERICA
-    SANTA MARIA DEL TOACHI
-    SAN JACINTO DEL BUA
-  LACONCORDIA= Cant.create(name: "LA CONCORDIA", prov_id: STODOMINGO.id)
-    LA CONCORDIA
-    MONTERREY
-    PLAN PILOTO
-    LAS VILLEGAS
+SANTODOMINGO= Cant.create(name: "SANTO DOMINGO", prov_id: STODOMINGO.id)
+Parr.create(name: "SANTO DOMINGO DE LOS COLORADOS", cant_id: SANTODOMINGO.id)
+Parr.create(name: "ABRAHAM CALAZACON", cant_id: SANTODOMINGO.id)
+Parr.create(name: "RIO VERDE", cant_id: SANTODOMINGO.id)
+Parr.create(name: "BOMBOLI", cant_id: SANTODOMINGO.id)
+Parr.create(name: "CHIGUILPE", cant_id: SANTODOMINGO.id)
+Parr.create(name: "ZARACAY", cant_id: SANTODOMINGO.id)
+Parr.create(name: "RIO TOACHI", cant_id: SANTODOMINGO.id)
+Parr.create(name: "ALLURIQUIN", cant_id: SANTODOMINGO.id)
+Parr.create(name: "VALLE HERMOSO", cant_id: SANTODOMINGO.id)
+Parr.create(name: "PUERTO LIMON", cant_id: SANTODOMINGO.id)
+Parr.create(name: "EL ESFUERZO", cant_id: SANTODOMINGO.id)
+Parr.create(name: "LUZ DE AMERICA", cant_id: SANTODOMINGO.id)
+Parr.create(name: "SANTA MARIA DEL TOACHI", cant_id: SANTODOMINGO.id)
+Parr.create(name: "SAN JACINTO DEL BUA", cant_id: SANTODOMINGO.id)
+LACONCORDIA= Cant.create(name: "LA CONCORDIA", prov_id: STODOMINGO.id)
+Parr.create(name: "LA CONCORDIA", cant_id: LACONCORDIA.id)
+Parr.create(name: "MONTERREY", cant_id: LACONCORDIA.id)
+Parr.create(name: "PLAN PILOTO", cant_id: LACONCORDIA.id)
+Parr.create(name: "LAS VILLEGAS", cant_id: LACONCORDIA.id)
 STAELENA = Prov.create(name: "SANTA ELENA")
-  SANTAELENA_CANT = Cant.create(name: "SANTA ELENA", prov_id: STAELENA.id)
-    BALLENITA
-    SANTA ELENA
-    ATAHUALPA
-    MANGLARALTO
-    COLONCHE
-    SIMON BOLIVAR (JULIO MORENO)
-    CHANDUY
-    SAN JOSE DE ANCON
-  SALINAS = Cant.create(name: "SALINAS", prov_id: STAELENA.id)
-    SALINAS
-    CARLOS ESPINOZA LARREA
-    VICENTE  ROCAFUERTE
-    GENERAL ALBERTO ENRIQUEZ GALLO
-    SANTA ROSA
-    ANCONCITO
-    JOSE LUIS TAMAYO (MUEY)
-  LALIBERTAD = Cant.create(name: "LA LIBERTAD", prov_id: STAELENA.id)
-    LA LIBERTAD
+SANTAELENA_CANT = Cant.create(name: "SANTA ELENA", prov_id: STAELENA.id)
+Parr.create(name: "BALLENITA", cant_id: SANTAELENA_CANT.id)
+Parr.create(name: "SANTA ELENA", cant_id: SANTAELENA_CANT.id)
+Parr.create(name: "ATAHUALPA", cant_id: SANTAELENA_CANT.id)
+Parr.create(name: "MANGLARALTO", cant_id: SANTAELENA_CANT.id)
+Parr.create(name: "COLONCHE", cant_id: SANTAELENA_CANT.id)
+Parr.create(name: "SIMON BOLIVAR (JULIO MORENO)", cant_id: SANTAELENA_CANT.id)
+Parr.create(name: "CHANDUY", cant_id: SANTAELENA_CANT.id)
+Parr.create(name: "SAN JOSE DE ANCON", cant_id: SANTAELENA_CANT.id)
+SALINAS = Cant.create(name: "SALINAS", prov_id: STAELENA.id)
+Parr.create(name: "SALINAS", cant_id: SALINAS.id)
+Parr.create(name: "CARLOS ESPINOZA LARREA", cant_id: SALINAS.id)
+Parr.create(name: "VICENTE  ROCAFUERTE", cant_id: SALINAS.id)
+Parr.create(name: "GENERAL ALBERTO ENRIQUEZ GALLO", cant_id: SALINAS.id)
+Parr.create(name: "SANTA ROSA", cant_id: SALINAS.id)
+Parr.create(name: "ANCONCITO", cant_id: SALINAS.id)
+Parr.create(name: "JOSE LUIS TAMAYO (MUEY)", cant_id: SALINAS.id)
+LALIBERTAD = Cant.create(name: "LA LIBERTAD", prov_id: STAELENA.id)
+Parr.create(name: "LA LIBERTAD", cant_id: LALIBERTAD.id)
 ########### Climate
 clima1 = Climate.create(name: "ARIDO SIN EXCESO DE AGUA, MEGATERMICO O CALIDO", temperature: "18-26", precipitation: "0- 250")
 clima2 = Climate.create(name: "ARIDO SIN EXCESO DE AGUA, MESOTERMICO TEMPLADO CALIDO", temperature: "10-22", precipitation: "500-750")
