@@ -58,3 +58,16 @@
     <%= @percentage %>%
   </div>
 </div>
+<div>
+<%= link_to atractivos_url, class: "btn btn-primary noVisited" do %>
+  <i class="glyphicon glyphicon-floppy-disk"> Guardar</i>
+<% end %>
+</div>
+<style>
+  a.noVisited:visited {color: #ffffff;}
+  a.noHover:hover { 
+    color: #428bca;
+    text-decoration: none;
+    background: transparent;
+  }
+</style>
