@@ -34,7 +34,7 @@
   <div class="form-group">
     <%= f.label :categ_id, "Categoría" , class: "col-md-2 control-label"%>
     <div class="col-md-6">
-    <%= f.select :categ_id, options_for_select(Categ.all.collect { |categ|
+    <%= f.select :categ_id, options_for_select(Categ.all.order(:name).collect { |categ|
       [categ.name.titleize, categ.id] }, 0),{ prompt: " ---- Seleccione Categoria"}, { id: 'categs_select', class: "form-control"} %>
     </div>
   </div>
@@ -53,7 +53,7 @@
   <div class="form-group">
     <%= f.label :prov_id, "Provincia:", class: "col-md-2 control-label" %>
     <div class="col-md-6">
-    <%= f.select :prov_id, options_for_select(Prov.all.collect { |prov|
+    <%= f.select :prov_id, options_for_select(Prov.all.order(:name).collect { |prov|
       [prov.name.titleize, prov.id] }, 0), { prompt: " ---- Seleccione Provincia" }, { id: 'provs_select', class: "form-control"} %>
      </div>
   </div>

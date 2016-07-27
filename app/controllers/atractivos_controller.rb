@@ -79,28 +79,28 @@ class AtractivosController < ApplicationController
   end
 
   def add_cantones
-    @cants = Cant.where("prov_id = ?", params[:prov_id])
+    @cants = Cant.where("prov_id = ?", params[:prov_id]).order(:name)
     respond_to do |format|
       format.js
     end
   end
 
   def add_parroquias
-    @parrs = Parr.where("cant_id = ?", params[:cant_id])
+    @parrs = Parr.where("cant_id = ?", params[:cant_id]).order(:name)
     respond_to do |format|
       format.js
     end
   end 
 
   def add_tipos
-    @tipos = Tipo.where("categ_id = ?", params[:categ_id])
+    @tipos = Tipo.where("categ_id = ?", params[:categ_id]).order(:name)
     respond_to do |format|
       format.js
     end
   end
 
   def add_subtipos
-    @subtipos = Subtipo.where("tipo_id = ?", params[:tipo_id])
+    @subtipos = Subtipo.where("tipo_id = ?", params[:tipo_id]).order(:name)
     respond_to do |format|
       format.js
     end
