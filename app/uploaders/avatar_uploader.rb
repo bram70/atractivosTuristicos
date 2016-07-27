@@ -2,7 +2,7 @@
 
 class AvatarUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -31,43 +31,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [100, 100]
-  end
-
-  def resize_to_fit(width, height)
-    manipulate! do |img|
-      img.resize_to_fit!(width, height)
-      img = yield(img) if block_given?
-      img
-    end
-  end
-
-  def manipulate!(options={}, &block)
-    cache_stored_file! if !cached?
-
-    read_block = create_info_block(options[:read])
-    image = ::Magick::Image.read(current_path, &read_block)
-    frames = ::Magick::ImageList.new
-
-    image.each_with_index do |frame, index|
-      frame = yield *[frame, index, options].take(block.arity) if block_given?
-      frames << frame if frame
-    end
-    frames.append(true) if block_given?
-
-    write_block = create_info_block(options[:write])
-
-    if options[:format] || @format
-      frames.write("#{options[:format] || @format}:#{current_path}", &write_block)
-      move_to = current_path.chomp(File.extname(current_path)) + ".#{options[:format] || @format}"
-      file.move_to(move_to, permissions, directory_permissions)
-    else
-      frames.write(current_path, &write_block)
-    end
-
-    destroy_image(frames)
-  rescue ::Magick::ImageMagickError => e
-    raise CarrierWave::ProcessingError, I18n.translate(:"errors.messages.rmagick_processing_error", :e => e, :default => I18n.translate(:"errors.messages.rmagick_processing_error", :e => e, :locale => :en))
+    process :resize_to_fill => [100, 100]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
