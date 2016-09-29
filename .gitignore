@@ -1,3 +1,6 @@
+Gemfile.lock
+config/
+shared/
 public/uploads
 /log/
 *.gem

@@ -22,12 +22,12 @@
     <% @atractivos.each do |atractivo| %>
       <tr>
         <td class="col-md-1">
-          <%= link_to atractivo, :class => "noHover" do %>
+          <%= link_to 'atract/popup/'+atractivo.id.to_s, :class => "popdown noHover" do %>
           <%= image_tag atractivo.avatar_atractivos.first.avatar.thumb.url, :class => "img-thumbnail" if (atractivo.avatar_atractivos.present? && atractivo.avatar_atractivos.first.avatar?) %>
         <% end %>
         </td>
         <td class="col-md-2">
-          <%= link_to atractivo, :class => "noHover" do %>
+          <%= link_to 'atract/popup/'+atractivo.id.to_s, :class => "popdown noHover" do %>
           <%= atractivo.name %>
         <% end %>
         </td>
@@ -88,4 +88,8 @@ input {
     background: transparent;
   }
 </style>
-
+<script>
+$(document).ready(function(){
+      $('.popdown').popdown({width:700});
+});
+</script>

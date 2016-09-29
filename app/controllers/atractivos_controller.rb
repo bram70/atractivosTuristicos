@@ -1,5 +1,6 @@
 class AtractivosController < ApplicationController
-  before_action :set_atractivo, only: [:show, :edit, :update, :destroy]
+  before_action :set_atractivo, only: [:show, :popup, :edit, :update, :destroy]
+  layout false, only: [:popup]
 
   # GET /atractivos
   # GET /atractivos.json
@@ -10,6 +11,11 @@ class AtractivosController < ApplicationController
   # GET /atractivos/1
   # GET /atractivos/1.json
   def show
+    @avatar_atractivos = @atractivo.avatar_atractivos.all
+  end
+
+  # GET /atractivos/1
+  def popup 
     @avatar_atractivos = @atractivo.avatar_atractivos.all
   end
 
