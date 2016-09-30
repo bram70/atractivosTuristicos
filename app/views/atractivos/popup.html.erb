@@ -1,6 +1,9 @@
-<h2>
-  <%= @atractivo.name %>
+<header>
+<h2 style="padding-left: 50px;">
+  <%= @atractivo.name.upcase %>
 </h2>
+</header>
+<section class= "body">
 <p id="notice"><%= notice %></p>
 <p>
 <% @avatar_atractivos.each do |p|%>
@@ -8,14 +11,8 @@
 <% end %>
 </p>
 <p>
-  <strong>Nombre:</strong>
-  <%= @atractivo.name %>
-</p>
-<p>
   <strong>Código atractivo:</strong>
   <%= @atractivo.codigo %>
-</p>
-<p>
   <strong>Jerarquia atractivo:</strong>
   <%= @atractivo.translateJerarquia %>
 </p>
@@ -26,69 +23,43 @@
 <input type="hidden" name="atractivo[latitud]" id="atractivo_latitud" value="<%= @atractivo.latitud %>">
 <input type="hidden" name="atractivo[longitud]" id="atractivo_longitud" value="<%= @atractivo.longitud %>">
 <p>
+  <strong>Provincia:</strong>
+  <%= @atractivo.prov %>
   <strong>Parroquia:</strong>
   <%= @atractivo.parr %>
-</p>
-
-<p>
   <strong>Cantón:</strong>
   <%= @atractivo.cant %>
 </p>
-
-<p>
-  <strong>Provincia:</strong>
-  <%= @atractivo.prov %>
-</p>
 <br>
-<div id="map-container" style = "width: 50%">
+<div id="map-container">
       <div id="map-canvas"></div>
 </div>
 <br>
 <p>
   <strong>Categoria:</strong>
   <%= @atractivo.categ %>
-</p>
-<p>
   <strong>Tipo:</strong>
   <%= @atractivo.tipo %>
-</p>
-<p>
   <strong>Subtipo:</strong>
   <%= @atractivo.subtipo %>
 </p>
 <p>
   <strong>Calle principal:</strong>
   <%= @atractivo.calle_principal %>
-</p>
-<p>
   <strong>Número de dirección:</strong>
   <%= @atractivo.numero_direccion %>
-</p>
-<p>
   <strong>Calle transversal:</strong>
   <%= @atractivo.transversal_direccion %>
-</p>
-<p>
   <strong>Barrio :</strong>
   <%= @atractivo.barrio_direccion %>
-</p>
-<p>
   <strong>Sitio más cercano :</strong>
   <%= @atractivo.sitio_cercano %>
-</p>
-<p>
   <strong>Altura:</strong>
   <%= @atractivo.altura %>
-</p>
-<p>
   <strong>Clima:</strong>
   <%= @atractivo.climate %>
-</p>
-<p>
   <strong>Temperatura:</strong>
   <%= @atractivo.climate.temperature if @atractivo.climate.present? %>
-</p>
-<p>
   <strong>Precipitación:</strong>
   <%= @atractivo.climate.precipitation if @atractivo.climate.present? %>
 </p>
@@ -96,6 +67,7 @@
 <%= link_to atractivos_path, class: "btn btn-primary noVisited" do %>
   <i class="glyphicon glyphicon-chevron-left"> Regresar</i>
 <% end %>
+</section>
 <style>
   a.noVisited:visited {color: #ffffff;}
   a.noHover:hover { 
