@@ -51,24 +51,43 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :prov_id, "Provincia:", class: "col-md-2 control-label" %>
+    <%= f.label :provincia_, "Provincia:", class: "col-md-2 control-label" %>
     <div class="col-md-6">
-    <%= f.select :prov_id, options_for_select(Prov.all.order(:name).collect { |prov|
-      [prov.name.titleize, prov.id] }, 0), { prompt: " ---- Seleccione Provincia" }, { id: 'provs_select', class: "form-control"} %>
-     </div>
+        <%= f.text_field :provincia_, :value => @prov, class: "form-control", readonly: true %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.label :cant_id, "Cantón:", class: "col-md-2 control-label"%>
+    <%= f.label :canton_, "Cantón:", class: "col-md-2 control-label"%>
     <div class="col-md-6">
-    <%= f.select :cant_id, options_for_select("", 0), {}, { id: 'cants_select', class: "form-control"} %>
+        <%= f.text_field :canton_, :value => @cant, class: "form-control", readonly: true %>
      </div>
+     <%= f.hidden_field :prov_id, :value => @prov.id %>
+     <%= f.hidden_field :cant_id, :value => @cant.id %>
   </div>
   <div class="form-group">
     <%= f.label :parr_id, "Parroquia:", class: "col-md-2 control-label" %>
     <div class="col-md-6">
-    <%= f.select :parr_id, options_for_select("", 0), {}, { id: 'parrs_select', :onchange => "centerMapByParroquia()", class: "form-control" } %>
+        <%= f.select :parr_id, options_for_select(@parrs.order(:name).collect { |parr| [parr.name.titleize, parr.id] }, 0), 
+            { prompt: " ---- Seleccione parroquia" }, { id: 'parrs_select', :onchange => "centerMapByParroquia()", class: "form-control" } %>
     </div>
   </div>
+
+  <div class="form-group">
+    <%= f.label :latitud, "Latitud", class: "col-md-2 control-label" %><br>
+    <div class="col-md-6">
+    <%= f.text_field :latitud, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :longitud, "Longitud", class: "col-md-2 control-label" %><br>
+    <div class="col-md-6">
+    <%= f.text_field :longitud, class: "form-control" %>
+    </div>
+    <a href="#">Dibujar en mapa</a>
+  </div>
+
+
    <div id="map-container">
       <div id="map-canvas"></div>
     </div>
@@ -136,8 +155,6 @@
     </div>
   </div>
 
-  <%= f.hidden_field :latitud %>
-  <%= f.hidden_field :longitud %>
   </br>
   <%= f.fields_for :avatar_atractivos do |p|%>
   <div class="form-group">
@@ -152,15 +169,17 @@
   </button>
 <% end %>
 <script type="text/javascript">
+$('a').click( function(e) {
+    e.preventDefault(); 
+    drawMarkerGivenCoord(document.getElementById("atractivo_latitud").value, document.getElementById("atractivo_longitud").value); 
+    return false; } );
+</script>
+<script type="text/javascript">
 var map;
 
- // $(document).on('change' ,'#parrs_select', centerMapByParroquia());
 var marker;
 var geocoder;
 function initialize() {
-
-  //var directionsService = new google.maps.DirectionsService();
-  //var directionsDisplay = new google.maps.DirectionsRenderer();
 
   var mapOptions = {
     center: new google.maps.LatLng(-0.1859053, -78.4848484),
@@ -217,12 +236,12 @@ function createInfoWindow(text){
 }
 
 function centerMapByParroquia(){
-  prov_select = document.getElementById("provs_select");
-  provincia = prov_select.options[prov_select.selectedIndex].text;
-  cant_select = document.getElementById("cants_select");
-  canton = cant_select.options[cant_select.selectedIndex].text;
+  prov_select = document.getElementById("atractivo_prov_id");
+  provincia = prov_select.value;
+  cant_select = document.getElementById("atractivo_cant_id");
+  canton = cant_select.value;
   parr_select = document.getElementById("parrs_select");
-  parroquia = cant_select.options[parr_select.selectedIndex].text;
+  parroquia = parr_select.options[parr_select.selectedIndex].text;
 
   ciudad = parroquia+","+canton+","+provincia+",Ecuador";
 
@@ -235,15 +254,15 @@ function centerMapByParroquia(){
   });
 }
 
-/*var parr_select = document.getElementById("parrs_select");
-parr_select.addEventListener(
-    'change', 
-    function() {toggleSelect(this.id)},
-    false
-    );*/
 function getCurrentPosition(e){
   var markercoords = new google.maps.LatLng(e.latLng.lat(),e.latLng.lng());
   return markercoords;
+}
+function drawMarkerGivenCoord(latitud, longitud){
+    var myLatLng = new google.maps.LatLng(latitud,longitud);
+    if (marker) marker.setMap(null);
+    marker = createMarker(myLatLng, map, "Atractivo");
+    map.setCenter(myLatLng);
 }
 
 function createMarker(coords, map, title){

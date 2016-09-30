@@ -99,4 +99,12 @@ class Atractivo < ActiveRecord::Base
      nil 
     end 
   }
+
+  scope :atractivosByCanton, -> (canton){
+      if canton.present?
+        where("cant_id = ?", "#{canton}")
+      else
+        nil
+      end
+  }
 end

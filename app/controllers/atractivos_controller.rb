@@ -6,9 +6,9 @@ class AtractivosController < ApplicationController
   # GET /atractivos.json
   def index
       if params[:idCanton].present?
-        @atractivos = Atractivo.all.paginate(:page => params[:page], :per_page => 5).order('id DESC')
+        session[:id_canton] = params[:idCanton] 
+        @atractivos = Atractivo.atractivosByCanton(session[:id_canton]).paginate(:page => params[:page], :per_page => 10).order('id DESC')
       else
-       # render :file => 'public/401.html', :status => :unauthorized
        url = "http://siete.turismo.gob.ec/establecimientos-admin/"
        redirect_to url
       end
@@ -28,6 +28,11 @@ class AtractivosController < ApplicationController
   # GET /atractivos/new
   def new
     @atractivo = Atractivo.new
+    @atractivo.cant_id = session[:id_canton]
+
+    @cant = Cant.find(@atractivo.cant_id)
+    @prov = Prov.find(@cant.prov)
+    @parrs = Parr.where("cant_id = ?", "#{@cant.id}")
     @avatar_atractivo = @atractivo.avatar_atractivos.build
   end
 
@@ -137,6 +142,7 @@ class AtractivosController < ApplicationController
       @tipos = Tipo.where(@atractivo.tipo_id)
       @subtipos = Subtipo.where("tipo_id = ?", @atractivo.subtipo)
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atractivo_params

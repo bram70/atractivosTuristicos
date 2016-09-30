@@ -59,7 +59,7 @@
   </div>
 </div>
 <div>
-<%= link_to atractivos_url, class: "btn btn-primary noVisited" do %>
+<%= link_to '/atractivos/?idCanton='+session[:id_canton], class: "btn btn-primary noVisited" do %>
   <i class="glyphicon glyphicon-floppy-disk"> Guardar</i>
 <% end %>
 </div>

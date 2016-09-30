@@ -27,8 +27,9 @@ Rails.application.routes.draw do
   root 'atractivos#index'
 
   match 'atract/popup/:id' => 'atractivos#popup', :via => :get
-  match '/:idCanton' => 'atractivos#index', :via => :get
-  match '/:idCanton/:id' => 'atractivos#index', :via => :get
+  match 'atractivos/atract/popup/:id' => 'atractivos#popup', :via => :get
+  match '/?idCanton=:id' => 'atractivos#index', :via => :get
+  match 'atractivos/?idCanton=:id' => 'atractivos#index', :via => :get
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

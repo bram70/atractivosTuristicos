@@ -2,7 +2,8 @@
 
 <%= render 'form' %>
 
-<%= link_to atractivos_path, class: "btn btn-primary noVisited noHover" do %>
+<%= link_to '/atractivos/?idCanton='+session[:id_canton], class: "btn btn-primary noVisited noHover" do %>
+    
   <i class="glyphicon glyphicon-chevron-left"> Regresar</i>
 <% end %>
 <div class="progress">
