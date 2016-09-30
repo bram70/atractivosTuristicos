@@ -5,7 +5,13 @@ class AtractivosController < ApplicationController
   # GET /atractivos
   # GET /atractivos.json
   def index
-    @atractivos = Atractivo.all.paginate(:page => params[:page], :per_page => 5).order('id DESC')
+      if params[:idCanton].present?
+        @atractivos = Atractivo.all.paginate(:page => params[:page], :per_page => 5).order('id DESC')
+      else
+       # render :file => 'public/401.html', :status => :unauthorized
+       url = "http://siete.turismo.gob.ec/establecimientos-admin/"
+       redirect_to url
+      end
   end
 
   # GET /atractivos/1
